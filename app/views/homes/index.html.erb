@@ -1,0 +1,6 @@
+<h1>All Homes</h1>
+
+<% @homes.each do |home| %>
+	<%= link_to home.name, home_path(home) %>
+	<h4><%= home.location %>  </h4>
+<% end %>
