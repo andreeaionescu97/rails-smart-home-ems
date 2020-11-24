@@ -15,15 +15,18 @@ puts "Creating new users"
 userA = User.create(email:"abd@123.com", password: "password")
 userB = User.create(email:"doremi@123.com", password: "qawsed")
 userC = User.create(email:"alphacat@abc.com", password: "123456")
+giovanni = User.create(email: "giovanni@123.com", password: "123456")
+andreea = User.create(email: "andreea@123.com", password: "123456")
+shan = User.create(email: "shan@123.com", password: "123456")
 
 puts "Finished creating #{User.count} users"
 puts "Creating new homes"
 
-home1 = Home.create(name:"the flat", location: "Lewisham, London", eco_function: "off", home_away_function: "off", history: "", daily: DateTime.new(2020, 1, 1), bill: 70, user: userA )
+home1 = Home.create(name:"the flat", location: "Lewisham, London", eco_function: "off", home_away_function: "off", history: "", daily: DateTime.new(2020, 1, 1), bill: 70, user: giovanni )
 
-home2 = Home.create(name:"the cottage", location: "Lyndhurst, Hampshire", eco_function: "on", home_away_function: "on", history: "", daily: DateTime.new(2020, 3, 8), bill: 60, user: userB)
+home2 = Home.create(name:"the cottage", location: "Lyndhurst, Hampshire", eco_function: "on", home_away_function: "on", history: "", daily: DateTime.new(2020, 3, 8), bill: 60, user: andreea)
 
-home3 = Home.create(name:"the town_house", location: "Colchester, Essex", eco_function: "on", home_away_function: "off", history: "", daily: DateTime.new(2020, 9, 13), bill: 100, user: userC)
+home3 = Home.create(name:"the town_house", location: "Colchester, Essex", eco_function: "on", home_away_function: "off", history: "", daily: DateTime.new(2020, 9, 13), bill: 100, user: shan)
 
 puts "Finished creating #{Home.count} homes"
 puts "Creating new devices"
