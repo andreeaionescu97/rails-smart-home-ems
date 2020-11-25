@@ -110,12 +110,6 @@ end
 
 
 
-
-
-
-
-
-
 # create 4 devices where the watts are displayed 
 
 puts "Finished creating #{Device.count} devices"
