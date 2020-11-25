@@ -21,6 +21,7 @@ class DevicesController < ApplicationController
         end
     end
 
+    
     def device_params
         params.require(:device).permit(:name, :category, :history, :daily)
     end
