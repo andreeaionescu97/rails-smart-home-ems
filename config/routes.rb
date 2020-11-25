@@ -5,11 +5,12 @@ Rails.application.routes.draw do
     resources :history, only: [ :show]
     resources :daily, only: [:show]
     resources :devices, only: [:new, :show, :create ]
+    end    
+  
+    resources :devices do
+      resources :energies, only: [:show]
+    end
   end
 
-  resources :energies do
-    resources :kilowatts, only: [:show]
-  end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-end
