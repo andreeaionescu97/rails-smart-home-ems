@@ -55,5 +55,5 @@ class HomesController < ApplicationController
     def home_params
         params.require(:home).permit(:name, :location, :eco_function, :home_away_function)
     end
-    
+
 end
