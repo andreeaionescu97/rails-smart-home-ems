@@ -1,4 +1,18 @@
 <%# <%= @device.name %> 
+<%# <% if @home.devices.ids.include?(@device.id) %>
+<%# <%= @device.name %>  
+<%# <%= @device.name %> 
 <% if @home.devices.ids.include?(@device.id) %>
-<%= @device.name %> 
+    <%= @device.name %> 
+<%# <%= @devices.energies %> 
+    <% @device.energies.each do |energy| %>
+        <%# <%= device.energies %> 
+        <ol>
+        <li><%= energy.kilowatts %> </li>
+        </ol>
+          <%# i dont know what to display liek no clue %>
+
+    <% end %>
 <% end %>
+
+<%# <% end %> 
