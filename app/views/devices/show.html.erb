@@ -1,1 +1,4 @@
-<%= @home.device.name %>
+<%# <%= @device.name %> 
+<% if @home.devices.ids.include?(@device.id) %>
+<%= @device.name %> 
+<% end %>
