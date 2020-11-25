@@ -2,5 +2,5 @@ class Device < ApplicationRecord
   belongs_to :home
   has_many :energies
   
-  validates :name, :category, presence: true
+  # validates :name, :category, presence: true
 end
