@@ -4,3 +4,10 @@
 <%# <%= link_to "Delete", home_path(@home), method: :delete, data: { confirm: "Are you sure?" } %>
 <%# <%= link_to "edit", home_path(@home), method: :edit, data: { confirm: "Are you sure?" } %>
 
+<% @devices.each do |device| %>
+ <p><%= device.name %></p>
+ <p><%= device.category %></p>
+    <% device.energies.each do |energy| %>
+      <% energy.kilowatts %>
+    <% end %>
+<% end %>

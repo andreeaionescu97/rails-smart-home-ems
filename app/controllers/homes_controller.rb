@@ -5,6 +5,8 @@ class HomesController < ApplicationController
 
     def show
         @home = Home.find(params[:id])
+        @devices = @home.devices
+        # @energy = Energy.where(:device_id:
     end
 
     def new
