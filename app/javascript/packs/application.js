@@ -29,6 +29,7 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initLanding } from '../components/initLanding';
 import { initLogIn } from '../components/initLogIn';
+import { initSideBar } from '../components/initSideBar';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
