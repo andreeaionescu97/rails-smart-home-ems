@@ -1,0 +1,7 @@
+<%= simple_form_for @home do |f| %>
+  <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.input :eco_function, as: :boolean, checked_value: "on", unchecked_value: "off" %>
+  <%= f.input :home_away_function, as: :boolean, checked_value: "on", unchecked_value: "off" %>
+  <%= f.button :submit %>
+<% end %>

@@ -1,0 +1,7 @@
+<h1>Edit <%= @home.name %></h1>
+
+<%= simple_form_for @home do |f| %>
+  <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.button :submit %>
+<% end %>
