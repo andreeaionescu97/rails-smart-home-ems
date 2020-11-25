@@ -18,6 +18,7 @@ puts "Creating new users"
 giovanni = User.create(email: "giovanni@123.com", password: "123456")
 andreea = User.create(email: "andreea@123.com", password: "123456")
 shan = User.create(email: "shan@123.com", password: "123456")
+# shahrukh = User.create(email: "shahrukh@123.com", password: "123456")
 
 puts "Finished creating #{User.count} users"
 puts "Creating new homes"
@@ -30,7 +31,10 @@ home3 = Home.create(name:"the town_house", location: "Colchester, Essex", eco_fu
 
 puts "Finished creating #{Home.count} homes"
 puts "Creating new devices"
-
+# hours = 24.times do 
+#     rand(250..750)
+# 
+# end
 # device1 = Device.create(name: "Boston Dynamics Frigo", category: "fridge_freezer", history: "", daily: DateTime.new(2020, 10, 18))
 
 # device2 = Device.create(name: "Google Alexa", category: "interactive controller", history: "", daily: DateTime.new(2020, 7, 7))
@@ -39,6 +43,29 @@ device3 = Device.create(name: "Panasonic Corp.", category: "smart tv", history: 
 
 device4 = Device.create(name: "Amstrad", category: "Inteligent bed_warmer", history: "", daily: DateTime.new(2020, 4, 25), home: home2)
 
-device5 = Device.create(name: "Philips Corp.", category: "Smart lights", history: "", daily: DateTime.new(2020, 11, 11), home: home3)
+
+device5 = Device.create(
+    name: "Philips Corp.",
+    category: "Smart lights",
+    history: "", 
+    daily: DateTime.new(2020, 11, 11),
+    home: home3)
+
+24.times do |i|
+energies1 = Energy.create(
+    kilowatts: rand(250..750),
+    hours_start_at: DateTime.new(2020, 4, 25, i, 0, 0),
+    price: rand(40..50),
+    device: device5
+)
+end
+
+
+
+
+
+
+
+# create 4 devices where the watts are displayed 
 
 puts "Finished creating #{Device.count} devices"
