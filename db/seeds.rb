@@ -60,6 +60,56 @@ energies1 = Energy.create(
 )
 end
 
+device6 = Device.create(
+    name: "Alexa.",
+    category: "Smart Speaker",
+    history: "", 
+    daily: DateTime.new(2020, 11, 12),
+    home: home3)
+
+24.times do |i|
+energies2 = Energy.create(
+    kilowatts: rand(250..750),
+    hours_start_at: DateTime.new(2020, 4, 25, i, 0, 0),
+    price: rand(40..50),
+    device: device6
+)
+end
+
+device7 = Device.create(
+    name: "Samsung.",
+    category: "Smart Fridge",
+    history: "", 
+    daily: DateTime.new(2020, 8, 12),
+    home: home3)
+
+24.times do |i|
+energies3 = Energy.create(
+    kilowatts: rand(250..750),
+    hours_start_at: DateTime.new(2020, 4, 25, i, 0, 0),
+    price: rand(40..50),
+    device: device7
+)
+end
+
+device8 = Device.create(
+    name: "LG.",
+    category: "Smart TV",
+    history: "", 
+    daily: DateTime.new(2020, 12, 12),
+    home: home3)
+
+24.times do |i|
+energies4 = Energy.create(
+    kilowatts: rand(250..750),
+    hours_start_at: DateTime.new(2020, 4, 25, i, 0, 0),
+    price: rand(40..50),
+    device: device8
+)
+end
+
+
+
 
 
 
