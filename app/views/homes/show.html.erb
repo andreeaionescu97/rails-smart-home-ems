@@ -2,7 +2,7 @@
 <h1 class="name-home-show"><%= @home.name %></h1>
 <h3 class="location-home-show"> <%= @home.location %> </h3>
  <p>Eco-State:<%= @home.eco_function %></p>
- <p>Home-Away:<%= @home.home_away_function %>
+ <p>Home-Away:<%= @home.home_away_function %></p>
 
 
 <%# <%= link_to "Delete", home_path(@home), method: :delete, data: { confirm: "Are you sure?" } %>
@@ -21,11 +21,7 @@
 
 
 
-<button class="btn-home"><%= link_to "Return to Homes", homes_path, class: "btn-home-text"%>
-</button>
+<button class="btn-home"><%= link_to "Return to Homes", homes_path, class: "btn-home-text"%></button>
+<button class="btn-home"><%= link_to "Edit Home", edit_home_path, class: "btn-home-text" %></button>
 
-<br>
-<br>
-
-<%= link_to "Edit Home", edit_home_path %>
-
+</div>
