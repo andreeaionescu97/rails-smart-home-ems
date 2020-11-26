@@ -5,6 +5,7 @@ class HomesController < ApplicationController
 
     def show
         @home = Home.find(params[:id])
+        @devices = @home.devices
     end
 
     def new
@@ -50,6 +51,7 @@ class HomesController < ApplicationController
         redirect_to homes_path
     end
 
+   
     private
 
     def home_params
