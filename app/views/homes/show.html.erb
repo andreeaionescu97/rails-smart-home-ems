@@ -1,45 +1,89 @@
 <div class="page-padding">
-<h1 class="name-home-show"><%= @home.name %></h1>
-<h3 class="location-home-show"> <%= @home.location %> </h3>
+
+<h3 class="name-home-show"><%= @home.name %></h3>
+<p class="location-home-show"> <%= @home.location %> </p>
+<hr>
+
+
+
+<div class="container-show-1 d-flex justify-content-between">
+<div class="connected-devices d-flex justify-content-between">
+   <div class="connected-svg">
+    <%= image_tag "tv.svg", class: "svg-size" %>
+   </div>
+  <div id="horizontal-dots-preloader">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+   <div class="connected-svg">
+    <%= image_tag "assistant.svg", class: "svg-size" %>
+   </div>
+  <div id="horizontal-dots-preloader">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <div class="connected-svg">
+    <%= image_tag "thermostat.svg", class: "svg-size" %>
+   </div>
+
+</div>
+<div class="functions">
+
 
 <%= link_to "Dashboard", home_devices_path(@home) %>
 
+
  <p>Eco-State:<%= @home.eco_function %></p>
  <p>Home-Away:<%= @home.home_away_function %></p>
+</div>
 
+</div>
 
 <%# <%= link_to "Delete", home_path(@home), method: :delete, data: { confirm: "Are you sure?" } %>
 <%# <%= link_to "edit", home_path(@home), method: :edit, data: { confirm: "Are you sure?" } %>
 
 <h4> Your Devices </h4>
-<div class="d-flex">
+<hr>
+<div class="container-show-2 d-flex justify-content-between">
   <div>
 <% @devices.each do |device| %>
- <p><%= device.name %></p>
- <p><%= device.category %></p>
-    <%# device.energies.each do |energy| %>
-      <%#= energy.kilowatts %>
-    <%# end %>
+ <p class="device-name"><%= device.name %></p>
+ <p class="device-category"><%= device.category %></p>
 <% end %>
-<div>
-<br>
+</div>
+
 <div>
 <input type="checkbox" class="toggle" id="toggle" />
 <label for="toggle">Add a new Device</label>
 <div class="toggled">
+  <div class="add-form">
   <%= simple_form_for [@home, @device] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :category %>
+    <%= f.input :name, class: "add-input" %>
+    <%= f.input :category, class: "add-input"  %>
     <%= f.button :submit %>
   <% end %>
 </div>
 </div>
+</div>
 
 </div>
 
+<hr>
+<div class="show-buttons-container d-flex justify-content-between">
+<button class="btn-home"><%= link_to "Return", homes_path, class: "btn-home-text"%></button>
+<button class="btn-home"><%= link_to "Edit", edit_home_path, class: "btn-home-text" %></button>
+</div>
 
 
-<button class="btn-home"><%= link_to "Return to Homes", homes_path, class: "btn-home-text"%></button>
-<button class="btn-home"><%= link_to "Edit Home", edit_home_path, class: "btn-home-text" %></button>
 
 </div>
