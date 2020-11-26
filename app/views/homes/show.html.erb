@@ -1,8 +1,14 @@
-<p><%= @home.name %>|| <%= @home.location %> <%= @home.eco_function %> <%= @home.home_away_function %> </p>
+<div class="page-padding">
+<h1 class="name-home-show"><%= @home.name %></h1>
+<h3 class="location-home-show"> <%= @home.location %> </h3>
+ <p>Eco-State:<%= @home.eco_function %></p>
+ <p>Home-Away:<%= @home.home_away_function %></p>
 
 
 <%# <%= link_to "Delete", home_path(@home), method: :delete, data: { confirm: "Are you sure?" } %>
 <%# <%= link_to "edit", home_path(@home), method: :edit, data: { confirm: "Are you sure?" } %>
+
+<h4> Your Devices </h4>
 
 <% @devices.each do |device| %>
  <p><%= device.name %></p>
@@ -12,6 +18,7 @@
     <% end %>
 <% end %>
 <br>
+
 <br>
 <%= simple_form_for [@home, @device] do |f| %>
   <%= f.input :name %>
@@ -22,10 +29,11 @@
 
 
 
-<br>
-<%= link_to "Return to Homes", homes_path %>
 
-<br>
-<br>
 
-<%= link_to "Edit Home", edit_home_path %>
+
+
+<button class="btn-home"><%= link_to "Return to Homes", homes_path, class: "btn-home-text"%></button>
+<button class="btn-home"><%= link_to "Edit Home", edit_home_path, class: "btn-home-text" %></button>
+
+</div>
