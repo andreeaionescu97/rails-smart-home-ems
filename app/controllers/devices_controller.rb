@@ -5,10 +5,10 @@ class DevicesController < ApplicationController
         # @home.find{|device| device == @device}
     end
 
-    def new
-        @device = Device.new
-        @home = Home.find(params[:home_id])
-    end
+    # def new
+    #     @device = Device.new
+    #     @home = Home.find(params[:home_id])
+    # end
 
     def create
         @device = Device.new(device_params)
@@ -23,6 +23,6 @@ class DevicesController < ApplicationController
 
     
     def device_params
-        params.require(:device).permit(:name, :category, :history, :daily)
+        params.require(:device).permit(:name, :category)
     end
 end
