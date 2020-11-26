@@ -1,7 +1,12 @@
-<h1>All Homes</h1>
 
+<div class="page-padding">
+<h1>All Homes</h1>
+<div class="home-cards d-flex flex-column">
 <% @homes.each do |home| %>
-	<%= link_to home.name, home_path(home) %>
-	<h4><%= home.location %>  </h4>
+<div class="home-card">
+	<p class="home-name-card"><%= link_to home.name, home_path(home), class: "home-name-card" %></p>
+	<p class="home-location-card"><%= home.location %> </p>
+</div>
 <% end %>
+
 
