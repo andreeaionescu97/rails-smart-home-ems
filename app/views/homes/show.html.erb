@@ -1,6 +1,9 @@
 <div class="page-padding">
 <h1 class="name-home-show"><%= @home.name %></h1>
 <h3 class="location-home-show"> <%= @home.location %> </h3>
+
+<%= link_to "Dashboard", home_devices_path(@home) %>
+
  <p>Eco-State:<%= @home.eco_function %></p>
  <p>Home-Away:<%= @home.home_away_function %></p>
 

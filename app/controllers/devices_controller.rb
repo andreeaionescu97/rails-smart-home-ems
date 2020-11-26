@@ -1,4 +1,11 @@
 class DevicesController < ApplicationController
+    
+    def index
+        @home = Home.find(params[:home_id])
+        @devices = @home.devices
+    end   
+   
+   
     def show
         @home = Home.find(params[:home_id])
         @device = Device.find(params[:id])
