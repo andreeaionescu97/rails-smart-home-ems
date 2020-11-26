@@ -19,6 +19,18 @@
 <% end %>
 <br>
 
+<br>
+<%= simple_form_for [@home, @device] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :category %>
+  <%= f.button :submit %>
+<% end %>
+
+
+
+
+
+
 
 
 <button class="btn-home"><%= link_to "Return to Homes", homes_path, class: "btn-home-text"%></button>
