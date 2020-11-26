@@ -31,5 +31,33 @@
 .btn-home-text:hover {
   color: white;
   text-decoration: none;
+}
+
+.toggle, /* 1 */
+.toggle:not(:checked) ~ .toggled /* 2 */ {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 
 }
+
+.toggle:focus ~ label {
+  color: deeppink;
+}
+
+label {
+  color: $green;
+}
+
+
+
+
+
+
+
+

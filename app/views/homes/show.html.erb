@@ -9,27 +9,30 @@
 <%# <%= link_to "edit", home_path(@home), method: :edit, data: { confirm: "Are you sure?" } %>
 
 <h4> Your Devices </h4>
-
+<div class="d-flex">
+  <div>
 <% @devices.each do |device| %>
  <p><%= device.name %></p>
  <p><%= device.category %></p>
-    <% device.energies.each do |energy| %>
-      <%= energy.kilowatts %>
-    <% end %>
+    <%# device.energies.each do |energy| %>
+      <%#= energy.kilowatts %>
+    <%# end %>
 <% end %>
+<div>
 <br>
+<div>
+<input type="checkbox" class="toggle" id="toggle" />
+<label for="toggle">Add a new Device</label>
+<div class="toggled">
+  <%= simple_form_for [@home, @device] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :category %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
+</div>
 
-<br>
-<%= simple_form_for [@home, @device] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :category %>
-  <%= f.button :submit %>
-<% end %>
-
-
-
-
-
+</div>
 
 
 
