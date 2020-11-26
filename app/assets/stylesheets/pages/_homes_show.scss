@@ -1,9 +1,11 @@
 .name-home-show {
   margin-bottom: 20px;
+ font-size: 30px;
 }
 
 .location-home-show {
   margin-bottom: 30px;
+  font-size: 20px;
 }
 
 .btn-home {
@@ -148,4 +150,16 @@ label {
 
 .add-input {
   border-radius: 30px;
+}
+
+.add-form {
+  border-style: solid;
+  border-color: $purple;
+  padding: 20px;
+}
+
+.show-buttons-container {
+  width: 800px;
+  text-align: center;
+
 }
