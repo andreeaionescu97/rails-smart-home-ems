@@ -1,14 +1,46 @@
+<div class="page-padding">
+  <h3 class="new-header"> Add a new home </h3>
+  <hr class="mb-5">
+  <div class="new-container d-flex justify-content-between">
+  <div class="new-form">
 <%= simple_form_for @home do |f| %>
-  <%= f.input :name %>
+  <div class="new-input"><%= f.input :name, class: "new-input" %></div>
   <%= f.input :location %>
-  <%= f.input :eco_function, as: :boolean, checked_value: "on", unchecked_value: "off" %>
-  <%= f.input :home_away_function, as: :boolean, checked_value: "on", unchecked_value: "off" %>
+  <%#= f.input :eco_function, as: :boolean, checked_value: "on", unchecked_value: "off" %>
+  <%#= f.input :home_away_function, as: :boolean, checked_value: "on", unchecked_value: "off" %>
   <%= f.button :submit %>
 <% end %>
-
-<br>
-
-<%= link_to "Return to Homes", homes_path %>
+</div>
 
 
+<div class="container-3">
+  <div class="cloud"></div>
+  <div class="cloud"></div>
+  <div class="cloud"></div>
+  <div class="moon"></div>
+  <div class="house">
+    <div class="fasade"></div>
+    <div class="roof"></div>
+    <div class="chimney"></div>
+    <div class="windows">
+      <div class="window"></div>
+      <div class="window"></div>
+    </div>
+    <div class="door"></div>
+    <div class="fondation"></div>
+    <div class="stairs">
+      <div class="stair"></div>
+      <div class="stair"></div>
+    </div>
+  </div>
 
+  <div class="tree"></div>
+  <div class="grass"></div>
+  <div class="road"></div>
+</div>
+</div>
+<hr class="mt-5">
+<button class="btn-home"><%= link_to "Return", homes_path, class: "btn-home-text"%></button>
+
+
+</div>

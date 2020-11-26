@@ -1,13 +1,17 @@
 
 <div class="page-padding">
-<h1>All Homes</h1>
+<h3 class="index-title">All Homes</h3>
 <div class="home-cards d-flex flex-column">
 <% @homes.each do |home| %>
 <div class="home-card">
 	<p class="home-name-card"><%= link_to home.name, home_path(home), class: "home-name-card" %></p>
-	<p class="home-location-card"><%= home.location %> </p>
+	<p class="home-location-card"><i class="fas fa-location-arrow"></i><span>&nbsp;</span><%= home.location %> </p>
+<!-- <button class="btn-home"><%#= link_to "Edit", edit_home_path, class: "btn-home-text" %></button> -->
+  <hr>
 </div>
 <% end %>
 </div>
 <button class="btn-home"><%= link_to "Add a Home", new_home_path, class: "btn-home-text" %></button>
 </div>
+
+

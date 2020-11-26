@@ -1,6 +1,8 @@
 class HomesController < ApplicationController
     def index
         @homes = Home.all
+
+
     end
 
     def show
@@ -52,7 +54,7 @@ class HomesController < ApplicationController
         redirect_to homes_path
     end
 
-   
+
     private
 
     def home_params
