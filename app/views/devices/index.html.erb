@@ -1,0 +1,9 @@
+<h1> Environment: <%= @home.name %></h1>
+<h3><%= @home.location %></h3>
+<br>
+<% @devices.each do |device| %>
+  <li> <%= device.name %>  </li>
+<% end %>
+<br>
+
+<%= link_to "Return to Homes", homes_path %>

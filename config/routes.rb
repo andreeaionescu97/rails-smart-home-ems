@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :homes do
     # resources :history, only: [ :show]
     # resources :daily, only: [:show]
-    resources :devices, only: [:new, :show, :create ]
+    resources :devices, only: [:new, :show, :create, :index ]
   end    
   
   # resources :devices do
