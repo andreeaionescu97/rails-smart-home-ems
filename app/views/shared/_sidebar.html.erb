@@ -1,4 +1,4 @@
-
+<% if user_signed_in? %>
   <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
   <label for="openSidebarMenu" class="sidebarIconToggle">
     <div class="spinner diagonal part-1"></div>
@@ -17,3 +17,5 @@
       <li><a href="https://www.linkedin.com/in/plavookac/" target="_blank">Home-away</a></li>
     </ul>
   </div>
+  <% else %>
+  <% end %>
