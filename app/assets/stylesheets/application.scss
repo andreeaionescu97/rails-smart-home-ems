@@ -12,3 +12,21 @@
 @import "components/index";
 @import "pages/index";
 
+.page-padding {
+  padding-left: 300px;
+  padding-top: 50px;
+  padding-right: 300px;
+}
+
+.page-padding h1 {
+  margin-bottom: 50px;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #666666;
+}
+
+body h1 {
+  font-family: 'Mukta', sans-serif;
+}
