@@ -8,8 +8,8 @@
  <p><%= device.name %></p>
  <p><%= device.category %></p>
     <% device.energies.each do |energy| %>
-      <% energy.kilowatts %>
+      <%= energy.kilowatts %>
     <% end %>
 <% end %>
 
-<% link_to "Return to Homes", homes_path %>
+<%= link_to "Return to Homes", homes_path %>

@@ -35,9 +35,9 @@ puts "Creating new devices"
 #     rand(250..750)
 # 
 # end
-# device1 = Device.create(name: "Boston Dynamics Frigo", category: "fridge_freezer", history: "", daily: DateTime.new(2020, 10, 18))
+device1 = Device.create(name: "Boston Dynamics Frigo", category: "fridge_freezer", history: "", daily: DateTime.new(2020, 10, 18))
 
-# device2 = Device.create(name: "Google Alexa", category: "interactive controller", history: "", daily: DateTime.new(2020, 7, 7))
+device2 = Device.create(name: "Google Alexa", category: "interactive controller", history: "", daily: DateTime.new(2020, 7, 7))
 
 device3 = Device.create(name: "Panasonic Corp.", category: "smart tv", history: "", daily: DateTime.new(2020, 11, 18), home: home1)
 
@@ -65,7 +65,7 @@ device6 = Device.create(
     category: "Smart Speaker",
     history: "", 
     daily: DateTime.new(2020, 11, 12),
-    home: home3)
+    home: home1)
 
 24.times do |i|
 energies2 = Energy.create(
@@ -97,7 +97,7 @@ device8 = Device.create(
     category: "Smart TV",
     history: "", 
     daily: DateTime.new(2020, 12, 12),
-    home: home3)
+    home: home2)
 
 24.times do |i|
 energies4 = Energy.create(
