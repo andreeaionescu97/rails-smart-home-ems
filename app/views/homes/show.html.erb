@@ -1,11 +1,14 @@
 <div class="page-padding">
-
-<h3 class="name-home-show"><%= @home.name %></h3>
-<p class="location-home-show"> <%= @home.location %> </p>
+<div class="d-flex justify-content-between">
+<div>
+  <h3 class="name-home-show"><%= @home.name %></h3>
+    <p class="location-home-show"> <i class="fas fa-location-arrow"></i><span>&nbsp;</span><%= @home.location %> </p>
+  </div>
+  <div>
+    <button class="btn-home"><%= link_to "Dashboard", home_devices_path(@home), class: "btn-home-text" %></button>
+  </div>
+</div>
 <hr>
-
-
-
 <div class="container-show-1 d-flex justify-content-between">
 <div class="connected-devices d-flex justify-content-between">
    <div class="connected-svg">
@@ -40,7 +43,7 @@
 <div class="functions">
 
 
-<%= link_to "Dashboard", home_devices_path(@home) %>
+
 
 
  <p>Eco-State:<%= @home.eco_function %></p>
@@ -49,8 +52,6 @@
 
 </div>
 
-<%# <%= link_to "Delete", home_path(@home), method: :delete, data: { confirm: "Are you sure?" } %>
-<%# <%= link_to "edit", home_path(@home), method: :edit, data: { confirm: "Are you sure?" } %>
 
 <h4> Your Devices </h4>
 <hr>
@@ -82,6 +83,7 @@
 <div class="show-buttons-container d-flex justify-content-between">
 <button class="btn-home"><%= link_to "Return", homes_path, class: "btn-home-text"%></button>
 <button class="btn-home"><%= link_to "Edit", edit_home_path, class: "btn-home-text" %></button>
+<button class="btn-home"><%= link_to "Delete", home_path(@home), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-home-text" %></button>
 </div>
 
 

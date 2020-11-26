@@ -1,10 +1,28 @@
-<h1>Edit <%= @home.name %></h1>
-
+<div class="page-padding">
+<h3 class="new-header"> Edit &#8287;<%= @home.name %></h3>
+  <hr class="mb-5">
+  <div class="new-container d-flex justify-content-between">
+  <div class="new-form">
 <%= simple_form_for @home do |f| %>
   <%= f.input :name %>
   <%= f.input :location %>
   <%= f.button :submit %>
 <% end %>
-<br>
+</div>
 
-<%= link_to "Return to Homes", homes_path %>
+<div class="item item4">
+  <div class="circle circle1"></div>
+  <div class="circle circle2"></div>
+  <div class="circle circle3"></div>
+  <div class="circle circle4"></div>
+  <div class="circle circle5"></div>
+</div>
+
+</div>
+<hr class="mt-5">
+
+<button class="btn-home"><%= link_to "Return", homes_path, class: "btn-home-text"%></button>
+
+</div>
+
+
