@@ -3,13 +3,165 @@
   <h3 class="name-home-show">Environment: &#8287;<%= @home.name %></h3>
     <p class="location-home-show"> <i class="fas fa-location-arrow"></i><span>&nbsp;</span><%= @home.location %> </p>
 <hr class="mb-5">
+
+<h4> Your Devices </h4>
+<hr>
+<div class="container-show-2 d-flex justify-content-between">
   <div>
-<% @devices.each do |device| %>
+<% @devices.each_with_index do |device,index| %>
  <p class="device-name"><%= device.name %></p>
  <p class="device-category"><%= device.category %></p>
-<% end %>
+<%# this is the beginign of drop down  %>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="daily-tab" data-toggle="tab" href="#daily_<%=index%>" role="tab" aria-controls="daily" aria-selected="true">daily</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="weekly-tab" data-toggle="tab" href="#weekly_<%=index%>" role="tab" aria-controls="weekly" aria-selected="false">weekly</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="monthly-tab" data-toggle="tab" href="#monthly_<%=index%>" role="tab" aria-controls="monthly" aria-selected="false">monthly</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="daily_<%=index%>" role="tabpanel" aria-labelledby="daily-tab">
+        <div id="daily_<%=index%>_div" style="width: 800px; height: 600px;"></div>
+  </div>
+  <div class="tab-pane fade" id="weekly_<%=index%>" role="tabpanel" aria-labelledby="weekly-tab">
+            <div id="weekly_<%=index%>_div" style="width: 800px; height: 600px;"></div>
+  </div>
+  <div class="tab-pane fade" id="monthly_<%=index%>" role="tabpanel" aria-labelledby="monthly-tab">
+            <div id="monthly_<%=index%>_div" style="width: 800px; height: 600px;"></div>
+  </div>
 </div>
+<%# this is the end of drop down %>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Move', 'Watts'],
+          ["00:00", 123],
+          ["01:00", 234],
+          ["02:00", 324],
+          ["03:00", 234],
+          ['04:00', 432],
+          ["05:00", 234],
+          ["06:00", 234],
+          ["06:00", 453],
+          ["07:00", 234],
+          ["08:00", 453],
+          ["09:00", 395],
+          ["10:00", 376],
+          ["11:00", 316],
+          ["12:00", 336],
+          ["13:00", 434],
+          ["14:00", 645],
+          ["15:00", 356],
+          ["16:00", 453],
+          ["17:00", 234],
+          ["18:00", 453],
+          ["19:00", 345],
+          ["20:00", 346],
+          ["21:00", 757],
+          ["22:00", 346],
+          ["23:00", 676]
+        ]);
+        var options = {
+          width: 700,
+          height: 500,
+          colors: ['#7400b8'],
+          legend: { position: 'none' },
+          chart: {
+            title: '<%=device.name%>',
+            subtitle: 'Power Usage Daily' },
+          axes: {
+            x: {
+              0: { side: 'bottom', label: 'Watts used in a day'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "90%" }
+        };
+        var chart = new google.charts.Bar(document.getElementById("daily_<%=index%>_div"));
+        // Convert the Classic options to Material options.
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      };
+    </script>
+<%# ------------------------------------------weekly %>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Move', 'Watts'],
+          ["Monday", 8709],
+          ["Tuesday", 8790],
+          ["Wednesday", 7909],
+          ["Thusday", 6098],
+          ["Friday", 7890],
+          ["Saturday", 8979],
+          ["Sunday", 7892]
+        ]);
+        var options = {
+          width: 700,
+          'height': 500,
+          legend: { position: 'none' },
+          colors: ['#7400b8'],
+          chart: {
+            title: '<%=device.name%>',
+            subtitle: 'Power Usage Weekly' },
+          axes: {
+            x: {
+              0: { side: 'bottom', label: 'Watts used in a day'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "90%" }
+        };
+        var chart = new google.charts.Bar(document.getElementById("weekly_<%=index%>_div"));
+        // Convert the Classic options to Material options.
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      };
+    </script>
+    <%# -----------------monthly %>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Move', 'Watts'],
+          ["Week-1", 8709],
+          ["Week-2", 8790],
+          ["Week-3", 7909],
+          ["Week-4", 6098]
+        ]);
+        var options = {
+          width: 700,
+          'height': 500,
+          legend: { position: 'none' },
+          colors: ['#7400b8'],
+          chart: {
+            title: '<%=device.name%>',
+            subtitle: 'Power Usage Weekly' },
+          axes: {
+            x: {
+              0: { side: 'bottom', label: 'Watts used in a Week'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "90%" }
+        };
+        var chart = new google.charts.Bar(document.getElementById('monthly_<%=index%>_div'));
+        // Convert the Classic options to Material options.
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      };
+    </script>
+<% end %>
 
-<hr class-"mt-5">
+
 <button class="btn-home"><%= link_to "Return", homes_path, class: "btn-home-text"%></button>
+
+
+
 </div>
