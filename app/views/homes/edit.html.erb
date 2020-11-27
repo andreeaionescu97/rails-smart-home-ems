@@ -1,8 +1,10 @@
 <div class="page-padding">
-<h3 class="new-header"> Edit &#8287;<%= @home.name %></h3>
+<h3 class="edit-header"> Edit &#8287;<%= @home.name %></h3>
+<p class="location-home-show"> <i class="fas fa-location-arrow"></i><span>&nbsp;</span><%= @home.location %> </p>
+
   <hr class="mb-5">
   <div class="new-container d-flex justify-content-between">
-  <div class="new-form">
+  <div class="edit-form">
 <%= simple_form_for @home do |f| %>
   <%= f.input :name %>
   <%= f.input :location %>
