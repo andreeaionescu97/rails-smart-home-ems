@@ -6,6 +6,8 @@
 <div class="home-card">
 	<p class="home-name-card"><%= link_to home.name, home_path(home), class: "home-name-card" %></p>
 	<%= link_to "Edit", edit_home_path(home) %>
+ <%= link_to "Delete Home", home_path(home.id), method: :delete %> 
+	
 	<p class="home-location-card"><i class="fas fa-location-arrow"></i><span>&nbsp;</span><%= home.location %> </p>
 <!-- <button class="btn-home"><%#= link_to "Edit", edit_home_path, class: "btn-home-text" %></button> -->
   <hr>

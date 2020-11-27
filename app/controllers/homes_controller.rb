@@ -49,7 +49,7 @@ class HomesController < ApplicationController
     end
 
     def destroy
-        @home = home.find(params[:id])
+        @home = Home.find(params[:id])
         @home.destroy
         redirect_to homes_path
     end
