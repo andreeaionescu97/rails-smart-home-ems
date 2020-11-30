@@ -25,138 +25,17 @@
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="daily_<%=index%>" role="tabpanel" aria-labelledby="daily-tab">
-        <div id="daily_<%=index%>_div" style="width: 800px; height: 600px;"></div>
+        <div class="charts" id="daily_<%=index%>_div" style="width: 600px; height: 400px;"></div>
   </div>
   <div class="tab-pane fade" id="weekly_<%=index%>" role="tabpanel" aria-labelledby="weekly-tab">
-            <div id="weekly_<%=index%>_div" style="width: 800px; height: 600px;"></div>
+            <div class="week-amcharts" id="weekly_<%=index%>_div" style="width: 600px; height: 400px;"></div>
   </div>
   <div class="tab-pane fade" id="monthly_<%=index%>" role="tabpanel" aria-labelledby="monthly-tab">
-            <div id="monthly_<%=index%>_div" style="width: 800px; height: 600px;"></div>
+            <div class="monthly-amcharts" id="monthly_<%=index%>_div" style="width: 600px; height: 400px;"></div>
   </div>
 </div>
 <%# this is the end of drop down %>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawStuff);
-      function drawStuff() {
-        var data = new google.visualization.arrayToDataTable([
-          ['Move', 'Watts'],
-          ["00:00", (Math.floor((Math.random() * 100) + 1))],
-          ["01:00", (Math.floor((Math.random() * 100) + 1))],
-          ["02:00", (Math.floor((Math.random() * 100) + 1))],
-          ["03:00", (Math.floor((Math.random() * 100) + 1))],
-          ['04:00', (Math.floor((Math.random() * 100) + 1))],
-          ["05:00", (Math.floor((Math.random() * 100) + 1))],
-          ["06:00", (Math.floor((Math.random() * 100) + 1))],
-          ["06:00", (Math.floor((Math.random() * 100) + 1))],
-          ["07:00", (Math.floor((Math.random() * 100) + 1))],
-          ["08:00", (Math.floor((Math.random() * 100) + 1))],
-          ["09:00", (Math.floor((Math.random() * 100) + 1))],
-          ["10:00", (Math.floor((Math.random() * 100) + 1))],
-          ["11:00", (Math.floor((Math.random() * 100) + 1))],
-          ["12:00", (Math.floor((Math.random() * 100) + 1))],
-          ["13:00", (Math.floor((Math.random() * 100) + 1))],
-          ["14:00", (Math.floor((Math.random() * 100) + 1))],
-          ["15:00", (Math.floor((Math.random() * 100) + 1))],
-          ["16:00", (Math.floor((Math.random() * 100) + 1))],
-          ["17:00", (Math.floor((Math.random() * 100) + 1))],
-          ["18:00", (Math.floor((Math.random() * 100) + 1))],
-          ["19:00", (Math.floor((Math.random() * 100) + 1))],
-          ["20:00", (Math.floor((Math.random() * 100) + 1))],
-          ["21:00", (Math.floor((Math.random() * 100) + 1))],
-          ["22:00", (Math.floor((Math.random() * 100) + 1))],
-          ["23:00", (Math.floor((Math.random() * 100) + 1))]
-        ]);
-        var options = {
-          width: 700,
-          height: 500,
-          colors: ['#7400b8'],
-          legend: { position: 'none' },
-          chart: {
-            title: '<%=device.name%>',
-            subtitle: 'Power Usage Daily' },
-          axes: {
-            x: {
-              0: { side: 'bottom', label: 'Watts used in a day'} // Top x-axis.
-            }
-          },
-          bar: { groupWidth: "90%" }
-        };
-        var chart = new google.charts.Bar(document.getElementById("daily_<%=index%>_div"));
-        // Convert the Classic options to Material options.
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      };
-    </script>
-<%# ------------------------------------------weekly %>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawStuff);
-      function drawStuff() {
-        var data = new google.visualization.arrayToDataTable([
-          ['Move', 'Watts'],
-          ["Monday", (Math.floor((Math.random() * 100) + 1))],
-          ["Tuesday", (Math.floor((Math.random() * 100) + 1))],
-          ["Wednesday", (Math.floor((Math.random() * 100) + 1))],
-          ["Thusday", (Math.floor((Math.random() * 100) + 1))],
-          ["Friday", (Math.floor((Math.random() * 100) + 1))],
-          ["Saturday", (Math.floor((Math.random() * 100) + 1))],
-          ["Sunday", (Math.floor((Math.random() * 100) + 1))]
-        ]);
-        var options = {
-          width: 700,
-          'height': 500,
-          legend: { position: 'none' },
-          colors: ['#7400b8'],
-          chart: {
-            title: '<%=device.name%>',
-            subtitle: 'Power Usage Weekly' },
-          axes: {
-            x: {
-              0: { side: 'bottom', label: 'Watts used in a day'} // Top x-axis.
-            }
-          },
-          bar: { groupWidth: "90%" }
-        };
-        var chart = new google.charts.Bar(document.getElementById("weekly_<%=index%>_div"));
-        // Convert the Classic options to Material options.
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      };
-    </script>
-    <%# -----------------monthly %>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawStuff);
-      function drawStuff() {
-        var data = new google.visualization.arrayToDataTable([
-          ['Move', 'Watts'],
-          ["Week-1", (Math.floor((Math.random() * 100) + 1))],
-          ["Week-2", (Math.floor((Math.random() * 100) + 1))],
-          ["Week-3", (Math.floor((Math.random() * 100) + 1))],
-          ["Week-4", (Math.floor((Math.random() * 100) + 1))]
-        ]);
-        var options = {
-          width: 700,
-          'height': 500,
-          legend: { position: 'none' },
-          colors: ['#7400b8'],
-          chart: {
-            title: '<%=device.name%>',
-            subtitle: 'Power Usage Weekly' },
-          axes: {
-            x: {
-              0: { side: 'bottom', label: 'Watts used in a Week'} // Top x-axis.
-            }
-          },
-          bar: { groupWidth: "90%" }
-        };
-        var chart = new google.charts.Bar(document.getElementById('monthly_<%=index%>_div'));
-        // Convert the Classic options to Material options.
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      };
-    </script>
+
 <% end %>
 
 

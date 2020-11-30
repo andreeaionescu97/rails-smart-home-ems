@@ -2,6 +2,7 @@
   "name": "rails_smart_home_ems",
   "private": true,
   "dependencies": {
+    "@amcharts/amcharts4": "^4.10.12",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
