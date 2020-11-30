@@ -31,25 +31,31 @@ home3 = Home.create(name:"the town_house", location: "Colchester, Essex", eco_fu
 
 puts "Finished creating #{Home.count} homes"
 puts "Creating new devices"
-# hours = 24.times do 
+# hours = 24.times do
 #     rand(250..750)
-# 
+#
 # end
-device1 = Device.create(name: "Boston Dynamics Frigo", category: "fridge_freezer", history: "", daily: DateTime.new(2020, 10, 18))
+category1 = Category.create(name: "Smart Home Assistant")
+category2 = Category.create(name: "Smart Thermostat")
+category3 = Category.create(name: "Smart Fridge")
 
-device2 = Device.create(name: "Google Alexa", category: "interactive controller", history: "", daily: DateTime.new(2020, 7, 7))
 
-device3 = Device.create(name: "Panasonic Corp.", category: "smart tv", history: "", daily: DateTime.new(2020, 11, 18), home: home1)
 
-device4 = Device.create(name: "Amstrad", category: "Inteligent bed_warmer", history: "", daily: DateTime.new(2020, 4, 25), home: home2)
+device1 = Device.create(name: "Boston Dynamics Frigo", category: "fridge_freezer", history: "", daily: DateTime.new(2020, 10, 18), category: category1)
+
+device2 = Device.create(name: "Google Alexa", category: "interactive controller", history: "", daily: DateTime.new(2020, 7, 7), category: category3)
+
+device3 = Device.create(name: "Panasonic Corp.", category: "smart tv", history: "", daily: DateTime.new(2020, 11, 18), home: home1, category: category3)
+
+device4 = Device.create(name: "Amstrad", category: "Inteligent bed_warmer", history: "", daily: DateTime.new(2020, 4, 25), home: home2, category: category3)
 
 
 device5 = Device.create(
     name: "Philips Corp.",
     category: "Smart lights",
-    history: "", 
+    history: "",
     daily: DateTime.new(2020, 11, 11),
-    home: home3)
+    home: home3, category: category3)
 
 24.times do |i|
 energies1 = Energy.create(
@@ -63,9 +69,9 @@ end
 device6 = Device.create(
     name: "Alexa.",
     category: "Smart Speaker",
-    history: "", 
+    history: "",
     daily: DateTime.new(2020, 11, 12),
-    home: home1)
+    home: home1, category: category3)
 
 24.times do |i|
 energies2 = Energy.create(
@@ -79,9 +85,9 @@ end
 device7 = Device.create(
     name: "Samsung.",
     category: "Smart Fridge",
-    history: "", 
+    history: "",
     daily: DateTime.new(2020, 8, 12),
-    home: home3)
+    home: home3, category: category3)
 
 24.times do |i|
 energies3 = Energy.create(
@@ -95,9 +101,9 @@ end
 device8 = Device.create(
     name: "LG.",
     category: "Smart TV",
-    history: "", 
+    history: "",
     daily: DateTime.new(2020, 12, 12),
-    home: home2)
+    home: home2, category: category3)
 
 24.times do |i|
 energies4 = Energy.create(
@@ -110,6 +116,6 @@ end
 
 
 
-# create 4 devices where the watts are displayed 
+# create 4 devices where the watts are displayed
 
 puts "Finished creating #{Device.count} devices"

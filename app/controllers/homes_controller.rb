@@ -7,6 +7,7 @@ class HomesController < ApplicationController
         @home = Home.find(params[:id])
         @devices = @home.devices
         @device = Device.new
+        @categories = Category.all
     end
 
     def new
