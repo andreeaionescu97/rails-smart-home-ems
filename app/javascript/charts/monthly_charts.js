@@ -28,6 +28,8 @@ chart.data = [{
   "Watts": (132*24*7)
 }];
 
+// 
+
 // Create axes
 let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
 categoryAxis.dataFields.category = "Month";

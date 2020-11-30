@@ -63,18 +63,26 @@ const charts = document.querySelectorAll(".charts")
 charts.forEach(chart => {
  dailyCharts(chart.id);
 });
-
 // weekly charts 
 const weeklyAmCharts = document.querySelectorAll(".week-amcharts")
 weeklyAmCharts.forEach(chart => {
   weeklyCharts(chart.id);
 });
 
-// montly charts 
+// monthly charts 
 const monthlyAmCharts = document.querySelectorAll(".monthly-amcharts")
 monthlyAmCharts.forEach(chart => {
   monthlyCharts(chart.id);
 });
+
+// monthly sum of charts 
+// var sum = 0
+// array.forEach((element,index) => {
+//  if (index < 1) return;
+//   sum += element[1] 
+// })
+// // console.log(sum)
+// document.getElementById('daily-sum<%=index%>').innerText = sum
 
   // initLogIn();
 });
