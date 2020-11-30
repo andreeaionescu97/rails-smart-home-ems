@@ -59,7 +59,7 @@
   <div>
 <% @devices.each do |device| %>
  <p class="device-name"><%= device.name %></p>
- <p class="device-category"><%= device.category %></p>
+ <p class="device-category"><%= device.category.name %></p>
 <% end %>
 </div>
 
@@ -70,7 +70,7 @@
   <div class="add-form">
   <%= simple_form_for [@home, @device] do |f| %>
     <%= f.input :name, class: "add-input" %>
-    <%= f.input :category, collection: ["Smart Home", "Smart Fridge", "Smart TV", "Smart Heater", "Smart Assistant"], class: "add-input" %>
+    <%= f.association :category, collection: @categories, class: "add-input" %>
 
     <%= f.button :submit %>
   <% end %>
