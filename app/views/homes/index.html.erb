@@ -1,29 +1,53 @@
 
 <div class="page-padding">
-<h3 class="index-title">All Homes</h3>
-<div class="home-cards d-flex flex-column">
-<% @homes.each do |home| %>
-<div class="home-card">
-	<p class="home-name-card"><%= link_to home.name, home_path(home), class: "home-name-card" %></p>
-	<%= link_to "Edit", edit_home_path(home) %>
- <%= link_to "Delete Home", home_path(home.id), method: :delete, data: { confirm: "Are you sure?" } %> 
-	
-	<p class="home-location-card"><i class="fas fa-location-arrow"></i><span>&nbsp;</span><%= home.location %> </p>
-<!-- <button class="btn-home"><%#= link_to "Edit", edit_home_path, class: "btn-home-text" %></button> -->
-  <hr>
+  <h3 class="index-title">All Homes</h3>
+  <div class="home-cards d-flex flex-column">
+    <% @homes.each do |home| %>
+      <div class="home-card">
+        <p class="home-name-card"><%= link_to home.name, home_path(home), class: "home-name-card" %></p>
+        <%= link_to "Edit", edit_home_path(home) %>
+        <button type="button" class="btn-home btn-home-text" data-toggle="modal" data-target="#exampleModal" >
+          Delete Home
+        </button>
+        <%# <%= link_to "Delete Home", home_path(home.id), method: :delete, data: { confirm: "Are you sure?" } %> <!--This line is the original delete link> %>
+
+        <p class="home-location-card"><i class="fas fa-location-arrow"></i><span>&nbsp;</span><%= home.location %> </p>
+        <!-- <button class="btn-home"><%#= link_to "Edit", edit_home_path, class: "btn-home-text" %></button> -->
+        <hr>
+      </div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= link_to "Delete Home", home_path(home.id), method: :delete, data: { confirm: "Are you sure?" } %> 
+        
+        <%# <button type="button" class="btn btn-primary">Save changes</button> %>
+      </div>
+    </div>
+  </div>
 </div>
-<% end %>
-</div>
-<button class="btn-home"><%= link_to "Add a Home", new_home_path, class: "btn-home-text" %></button>
+    <% end %>
+  </div>
+    <button class="btn-home"><%= link_to "Add a Home", new_home_path, class: "btn-home-text" %></button>
 </div>
 
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
+<%# <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> %>
+  <%# Delete Home %>
+<%# </button> %>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<%# <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -41,4 +65,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> %>
