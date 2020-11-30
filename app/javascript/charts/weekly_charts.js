@@ -74,11 +74,32 @@ hoverState.properties.fillOpacity = 1;
 series.columns.template.adapter.add("fill", function(fill, target) {
   return chart.colors.getIndex(target.dataItem.index);
 });
-
+// summing
+let sumData = 0
+chart.data.forEach(element => {
+  
+  sumData += element.Watts
+  
+});
+console.log(sumData)
+document.getElementById('weekly-sum<%=index%>').innerText = sumData
 // Cursor
 chart.cursor = new am4charts.XYCursor();
-};
 
+
+};
+// var sum = 0
+// array.forEach((element,index) => {
+//  if (index < 1) return;
+//   sum += element[1] 
+// })
+
+// let sumData = 0
+// chart.data.forEach(element => {
+//   debugger
+//   sumData = element.Watts
+  
+// });
 
 
 export { weeklyCharts }
