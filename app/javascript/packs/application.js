@@ -34,6 +34,8 @@ import { initSideBar } from '../components/initSideBar';
 import { dailyCharts } from '../charts/daily_charts';
 import { weeklyCharts } from '../charts/weekly_charts';
 import { monthlyCharts } from '../charts/monthly_charts';
+import { dailyChartsPrice } from '../charts/daily_price_charts';
+
 
 
 
@@ -73,6 +75,13 @@ weeklyAmCharts.forEach(chart => {
 const monthlyAmCharts = document.querySelectorAll(".monthly-amcharts")
 monthlyAmCharts.forEach(chart => {
   monthlyCharts(chart.id);
+});
+
+// daily price charts
+
+const dailyAmPrice = document.querySelectorAll(".daily-amcharts-price")
+dailyAmPrice.forEach(chart => {
+  dailyChartsPrice(chart.id);
 });
 
 //monthly sum of charts 
