@@ -5,15 +5,22 @@
     <% @homes.each do |home| %>
       <div class="home-card">
         <p class="home-name-card"><%= link_to home.name, home_path(home), class: "home-name-card" %></p>
+<<<<<<< HEAD
         <!-- <p class="location-home-show"> <i class="fas fa-location-arrow"></i><span>&nbsp;</span><%#= @home.location %> </p> -->
         <button class="btn-home"><%= link_to "Edit", edit_home_path(home), class: "btn-home-text" %></button>
         <%# <%= link_to "Edit", edit_home_path(home) %>
+=======
+
+        <p class="home-location-card"><i class="fas fa-location-arrow"></i><span>&nbsp;</span><%= home.location %></p> 
+
+        <%= link_to "Edit", edit_home_path(home), class: "btn-home btn-home-text" %></button>
+
+>>>>>>> 40b2d9d7c8aacf43562eb17fd9ca3f996800e024
         <button type="button" class="btn-home btn-home-text" data-toggle="modal" data-target="#exampleModal" >
           Delete Home
         </button>
-        <%# <%= link_to "Delete Home", home_path(home.id), method: :delete, data: { confirm: "Are you sure?" } %> <!--This line is the original delete link> %>
+        <%# <%= link_to "Delete Home", home_path(home.id), method: :delete, data: { confirm: "Are you sure?" } %> <!--This line is the original delete link> %>-->
 
-        <p class="home-location-card"><i class="fas fa-location-arrow"></i><span>&nbsp;</span><%= home.location %> </p>
         <!-- <button class="btn-home"><%#= link_to "Edit", edit_home_path, class: "btn-home-text" %></button> -->
         <hr>
       </div>
