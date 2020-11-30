@@ -5,8 +5,9 @@
     <% @homes.each do |home| %>
       <div class="home-card">
         <p class="home-name-card"><%= link_to home.name, home_path(home), class: "home-name-card" %></p>
+        <!-- <p class="location-home-show"> <i class="fas fa-location-arrow"></i><span>&nbsp;</span><%#= @home.location %> </p> -->
         <button class="btn-home"><%= link_to "Edit", edit_home_path(home), class: "btn-home-text" %></button>
-        <%# <%= link_to "Edit", edit_home_path(home) %> 
+        <%# <%= link_to "Edit", edit_home_path(home) %>
         <button type="button" class="btn-home btn-home-text" data-toggle="modal" data-target="#exampleModal" >
           Delete Home
         </button>
@@ -30,11 +31,11 @@
             </div>
               <div class="modal-footer">
                 <button type="button" class="btn-home btn-home-text" data-dismiss="modal">Close</button>
-                
+
                 <%= link_to "Delete Home", home_path(home.id), type: "button", class: "btn-home btn-home-text", method: :delete, data: { confirm: "Are you sure?" } %>
 
 
-                              
+
                 <%# <button type="button" class="btn btn-primary">Save changes</button> %>
               </div>
             </div>
