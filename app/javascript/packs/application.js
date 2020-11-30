@@ -31,6 +31,12 @@ import "bootstrap";
 import { initLanding } from '../components/initLanding';
 // import { initLogIn } from '../components/initLogIn';
 import { initSideBar } from '../components/initSideBar';
+import { dailyCharts } from '../charts/daily_charts';
+import { weeklyCharts } from '../charts/weekly_charts';
+import { monthlyCharts } from '../charts/monthly_charts';
+
+
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -52,7 +58,23 @@ document.addEventListener('turbolinks:load', () => {
     });
   }
 
+// daily charts 
+const charts = document.querySelectorAll(".charts")
+charts.forEach(chart => {
+ dailyCharts(chart.id);
+});
 
+// weekly charts 
+const weeklyAmCharts = document.querySelectorAll(".week-amcharts")
+weeklyAmCharts.forEach(chart => {
+  weeklyCharts(chart.id);
+});
+
+// montly charts 
+const monthlyAmCharts = document.querySelectorAll(".monthly-amcharts")
+monthlyAmCharts.forEach(chart => {
+  monthlyCharts(chart.id);
+});
 
   // initLogIn();
 });

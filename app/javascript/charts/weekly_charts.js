@@ -3,7 +3,7 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
-const dailyCharts = (chartId) => {
+const weeklyCharts = (chartId) => {
 /* Chart code */
 // Themes begin
 am4core.useTheme(am4themes_animated);
@@ -15,82 +15,31 @@ chart.scrollbarX = new am4core.Scrollbar();
 
 // Add data
 chart.data = [{
-  "Time": "00:00",
-  "Watts": 302
+  "Week": "Monday",
+  "Watts": (302*24)
 }, {
-  "Time": "01:00",
-  "Watts": 188
+  "Week": "Tuesday",
+  "Watts": (188*24)
 }, {
-  "Time": "02:00",
-  "Watts": 180
+  "Week": "Wednesday",
+  "Watts": (180*24)
 }, {
-  "Time": "03:00",
-  "Watts": 132
+  "Week": "Thursday",
+  "Watts": (132*24)
 }, {
-  "Time": "04:00",
-  "Watts": 112
+  "Week": "Friday",
+  "Watts": (112*24)
 }, {
-  "Time": "05:00",
-  "Watts": 111
+  "Week": "Saturday",
+  "Watts": (111*24)
 }, {
-  "Time": "06:00",
-  "Watts": 984
-}, {
-  "Time": "07:00",
-  "Watts": 711
-}, {
-  "Time": "08:00",
-  "Watts": 665
-}, {
-  "Time": "09:00",
-  "Watts": 580
-}, {
-  "Time": "10:00",
-  "Watts": 443
-}, {
-  "Time": "11:00",
-  "Watts": 675
-}, {
-  "Time": "12:00",
-  "Watts": 234
-}, {
-  "Time": "13:00",
-  "Watts": 324
-}, {
-  "Time": "14:00",
-  "Watts": 565
-}, {
-  "Time": "15:00",
-  "Watts": 675
-}, {
-  "Time": "16:00",
-  "Watts": 456
-}, {
-  "Time": "17:00",
-  "Watts": 456
-}, {
-  "Time": "18:00",
-  "Watts": 977
-}, {
-  "Time": "19:00",
-  "Watts": 123
-}, {
-  "Time": "20:00",
-  "Watts": 465
-}, {
-  "Time": "21:00",
-  "Watts": 565
-}, {
-  "Time": "22:00",
-  "Watts": 345
-}, {
-  "Time": "23:00",
-  "Watts": 441
+  "Week": "Sunday",
+  "Watts": (231*24)
 }];
 
 // Create axes
 let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-categoryAxis.dataFields.category = "Time";
+categoryAxis.dataFields.category = "Week";
 categoryAxis.renderer.grid.template.location = 0;
 categoryAxis.renderer.minGridDistance = 30;
 categoryAxis.renderer.labels.template.horizontalCenter = "right";
@@ -106,7 +55,7 @@ valueAxis.renderer.minWidth = 50;
 let series = chart.series.push(new am4charts.ColumnSeries());
 series.sequencedInterpolation = true;
 series.dataFields.valueY = "Watts";
-series.dataFields.categoryX = "Time";
+series.dataFields.categoryX = "Week";
 series.tooltipText = "[{categoryX}: bold]{valueY}[/]";
 series.columns.template.strokeWidth = 0;
 
@@ -132,4 +81,4 @@ chart.cursor = new am4charts.XYCursor();
 
 
 
-export { dailyCharts }
+export { weeklyCharts }
