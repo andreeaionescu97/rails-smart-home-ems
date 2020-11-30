@@ -26,15 +26,28 @@
   font-size: 18px;
 }
 
-.avatar {
-  margin-top: 15px;
-  margin-right: 50px;
+.nav-link:hover {
+  text-decoration: none;
+  font-size: 19px;
 }
+
+// .avatar {
+//   margin-top: 15px;
+//   margin-right: 50px;
+// }
+
+
 
 .dropdown-menu {
   border-style: none;
 }
 
+
 .dropdown-item {
   color: $green !important;
+}
+
+.dropdown-item:hover {
+  text-decoration: none;
+  font-size: 16px;
 }
