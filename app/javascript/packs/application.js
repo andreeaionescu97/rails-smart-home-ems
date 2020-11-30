@@ -29,13 +29,32 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initLanding } from '../components/initLanding';
-import { initLogIn } from '../components/initLogIn';
+// import { initLogIn } from '../components/initLogIn';
 import { initSideBar } from '../components/initSideBar';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   console.log(window.location.pathname == "");
-  initLogIn();
+  
+  console.log("loaded log-in");
+  let sighnUpButton = document.querySelector('#signUp');
+  let sighnInButton = document.querySelector('#signIn');
+  let container = document.querySelector('#container');
+
+  if (sighnUpButton) {
+    sighnUpButton.addEventListener('click', () => {
+      container.classList.add('right-panel-active');
+    });
+  }
+  if (sighnInButton) {
+    sighnInButton.addEventListener('click', () => {
+      container.classList.remove('right-panel-active');
+    });
+  }
+
+
+
+  // initLogIn();
 });
 
 
