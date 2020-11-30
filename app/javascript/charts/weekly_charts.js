@@ -16,25 +16,25 @@ chart.scrollbarX = new am4core.Scrollbar();
 // Add data
 chart.data = [{
   "Week": "Monday",
-  "Watts": (302*24)
+  "Watts": Math.floor((Math.random() * 100) + 1)
 }, {
   "Week": "Tuesday",
-  "Watts": (188*24)
+  "Watts": Math.floor((Math.random() * 100) + 1)
 }, {
   "Week": "Wednesday",
-  "Watts": (180*24)
+  "Watts": Math.floor((Math.random() * 100) + 1)
 }, {
   "Week": "Thursday",
-  "Watts": (132*24)
+  "Watts": Math.floor((Math.random() * 100) + 1)
 }, {
   "Week": "Friday",
-  "Watts": (112*24)
+  "Watts": Math.floor((Math.random() * 100) + 1)
 }, {
   "Week": "Saturday",
-  "Watts": (111*24)
+  "Watts": Math.floor((Math.random() * 100) + 1)
 }, {
   "Week": "Sunday",
-  "Watts": (231*24)
+  "Watts": Math.floor((Math.random() * 100) + 1)
 }];
 
 // Create axes
@@ -74,11 +74,75 @@ hoverState.properties.fillOpacity = 1;
 series.columns.template.adapter.add("fill", function(fill, target) {
   return chart.colors.getIndex(target.dataItem.index);
 });
+// summing
+let sumDataWeek = 0
+chart.data.forEach(element => {
+  
+  sumDataWeek += element.Watts
+  
+});
+const chartWeeklySum = document.getElementById(chartId);
+const chartWeekIndex = chartWeeklySum.dataset.id;
+// console.log(chartWeekIndex)
+document.getElementById(`weekly-sum${chartWeekIndex}`).innerText = sumDataWeek
+
+// highest value
+var highestArrayWeek = []
+chart.data.forEach(element => {
+  
+  highestArrayWeek.push(element.Watts)
+});
+var highestValueWeek = Math.max(...highestArrayWeek);
+
+const weekHighId = document.getElementById(chartId);
+const weekHighIndex = weekHighId.dataset.id;
+// console.log(weekHighIndex)
+
+document.getElementById(`weekly-high${weekHighIndex}`).innerText = highestValueWeek
+
+// lowest value
+var lowestArrayWeek  = []
+chart.data.forEach(element => {
+  
+  lowestArrayWeek.push(element.Watts)
+});
+var lowestValueWeek = Math.min(...lowestArrayWeek);
+
+const weekLowId = document.getElementById(chartId);
+const weekLowIndex = weekLowId.dataset.id;
+// console.log(charHighIndex)
+
+document.getElementById(`weekly-low${weekLowIndex}`).innerText = lowestValueWeek
+
+// price 
+
+var weeklyPrice = sumDataWeek * 20;
+
+const weeklyPriceCost = document.getElementById(chartId);
+const weekPriceIndex = weeklyPriceCost.dataset.id;
+
+document.getElementById(`weekly-price${weekPriceIndex}`).innerText = weeklyPrice
+
+
+
 
 // Cursor
 chart.cursor = new am4charts.XYCursor();
-};
 
+
+};
+// var sum = 0
+// array.forEach((element,index) => {
+//  if (index < 1) return;
+//   sum += element[1] 
+// })
+
+// let sumDataWeek = 0
+// chart.data.forEach(element => {
+//   debugger
+//   sumDataWeek = element.Watts
+  
+// });
 
 
 export { weeklyCharts }

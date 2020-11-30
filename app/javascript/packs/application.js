@@ -75,14 +75,14 @@ monthlyAmCharts.forEach(chart => {
   monthlyCharts(chart.id);
 });
 
-// monthly sum of charts 
+//monthly sum of charts 
 // var sum = 0
 // array.forEach((element,index) => {
 //  if (index < 1) return;
 //   sum += element[1] 
 // })
-// // console.log(sum)
-// document.getElementById('daily-sum<%=index%>').innerText = sum
+// console.log(sum)
+//document.getElementById('daily-sum<%=index%>').innerText = sum
 
   // initLogIn();
 });

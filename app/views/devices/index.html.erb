@@ -25,13 +25,54 @@
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="daily_<%=index%>" role="tabpanel" aria-labelledby="daily-tab">
-        <div class="charts" id="daily_<%=index%>_div" style="width: 600px; height: 400px;"></div>
+                                    <h1>Average</h1>
+              <h1 id="daily-sum<%=index%>"></h1>
+
+                   <h1>high</h1>
+              <h1 id="daily-high<%=index%>"></h1>
+
+                             <h1>low</h1>
+              <h1 id="daily-low<%=index%>"></h1>
+
+
+              <h1>price</h1>
+              <h1 id="daily-price<%=index%>"></h1>
+        <div data-id="<%=index%>" class="charts" id="daily_<%=index%>_div" style="width: 600px; height: 400px;"></div>
   </div>
   <div class="tab-pane fade" id="weekly_<%=index%>" role="tabpanel" aria-labelledby="weekly-tab">
-            <div class="week-amcharts" id="weekly_<%=index%>_div" style="width: 600px; height: 400px;"></div>
+                    <h1>Average</h1>
+              <h1 id="weekly-sum<%=index%>"></h1>
+
+                   <h1>high</h1>
+              <h1 id="weekly-high<%=index%>"></h1>
+
+                             <h1>low</h1>
+              <h1 id="weekly-low<%=index%>"></h1>
+
+
+              <h1>price</h1>
+              <h1 id="weekly-price<%=index%>"></h1>
+
+
+
+
+            <div data-id="<%=index%>"  class="week-amcharts" id="weekly_<%=index%>_div" style="width: 600px; height: 400px;"></div>
   </div>
   <div class="tab-pane fade" id="monthly_<%=index%>" role="tabpanel" aria-labelledby="monthly-tab">
-            <div class="monthly-amcharts" id="monthly_<%=index%>_div" style="width: 600px; height: 400px;"></div>
+                                  <h1>Average</h1>
+              <h1 id="monthly-sum<%=index%>"></h1>
+
+                   <h1>high</h1>
+              <h1 id="monthly-high<%=index%>"></h1>
+
+                             <h1>low</h1>
+              <h1 id="monthly-low<%=index%>"></h1>
+
+
+              <h1>price</h1>
+              <h1 id="monthly-price<%=index%>"></h1>
+            <div data-id="<%=index%>" class="monthly-amcharts" id="monthly_<%=index%>_div" style="width: 600px; height: 400px;"></div>
+
   </div>
 </div>
 <%# this is the end of drop down %>
