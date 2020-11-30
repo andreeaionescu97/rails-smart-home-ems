@@ -32,6 +32,8 @@
   transition: all .7s ease;
 }
 
+
+
 .nav-right {
   position: fixed;
   right: 40px;
@@ -293,6 +295,20 @@ input[type=checkbox] {
     margin-top: 10px;
     margin-left: 30px;
 }
+
+.sidebarIconToggle:hover {
+  height: 100%;
+  width: 100%;
+  top: 22px;
+  left: 15px;
+  height: 35px;
+  width: 35px;
+  margin-top: 18px;
+  margin-left: 30px;
+
+
+}
+
 .spinner {
     transition: all 0.3s;
     box-sizing: border-box;
