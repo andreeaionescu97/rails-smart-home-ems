@@ -16,16 +16,16 @@ chart.scrollbarX = new am4core.Scrollbar();
 // Add data
 chart.data = [{
   "Month": "Week 1",
-  "Watts": (302*24*7)
+  "Watts": Math.floor((Math.random() * 700) + 70)
 }, {
   "Month": "Week 2",
-  "Watts": (188*24*7)
+  "Watts": Math.floor((Math.random() * 700) + 70)
 }, {
   "Month": "Week 3",
-  "Watts": (180*24*7)
+  "Watts": Math.floor((Math.random() * 700) + 70)
 }, {
   "Month": "Week 4",
-  "Watts": (132*24*7)
+  "Watts": Math.floor((Math.random() * 700) + 70)
 }];
 
 // 
@@ -67,6 +67,58 @@ hoverState.properties.fillOpacity = 1;
 series.columns.template.adapter.add("fill", function(fill, target) {
   return chart.colors.getIndex(target.dataItem.index);
 });
+
+
+// summing
+let sumDataMonth = 0
+chart.data.forEach(element => {
+  
+  sumDataMonth += element.Watts
+  
+});
+const chartWeeklySum = document.getElementById(chartId);
+const chartWeekIndex = chartWeeklySum.dataset.id;
+// console.log(chartWeekIndex)
+document.getElementById(`monthly-sum${chartWeekIndex}`).innerText = sumDataMonth
+
+// highest value
+var highestArrayMonth = []
+chart.data.forEach(element => {
+  
+  highestArrayMonth.push(element.Watts)
+});
+var highestValueMonth = Math.max(...highestArrayMonth);
+
+const monthHighId = document.getElementById(chartId);
+const monthHighIndex = monthHighId.dataset.id;
+// console.log(monthHighIndex)
+
+document.getElementById(`monthly-high${monthHighIndex}`).innerText = highestValueMonth
+
+// lowest value
+var lowestArrayMonth  = []
+chart.data.forEach(element => {
+  
+  lowestArrayMonth.push(element.Watts)
+});
+var lowestValueMonth = Math.min(...lowestArrayMonth);
+
+const monthLowId = document.getElementById(chartId);
+const monthLowIndex = monthLowId.dataset.id;
+// console.log(charHighIndex)
+
+document.getElementById(`monthly-low${monthLowIndex}`).innerText = lowestValueMonth
+
+// price 
+
+var monthlyPrice = sumDataMonth * 20;
+
+const monthlyPriceCost = document.getElementById(chartId);
+const weekPriceIndex = monthlyPriceCost.dataset.id;
+
+document.getElementById(`monthly-price${weekPriceIndex}`).innerText = monthlyPrice
+
+
 
 // Cursor
 chart.cursor = new am4charts.XYCursor();

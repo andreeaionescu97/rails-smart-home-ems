@@ -16,76 +16,76 @@ chart.scrollbarX = new am4core.Scrollbar();
 // Add data
 chart.data = [{
   "Time": "00:00",
-  "Watts": 302
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "01:00",
-  "Watts": 188
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "02:00",
-  "Watts": 180
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "03:00",
-  "Watts": 132
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "04:00",
-  "Watts": 112
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "05:00",
-  "Watts": 111
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "06:00",
-  "Watts": 984
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "07:00",
-  "Watts": 711
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "08:00",
-  "Watts": 665
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "09:00",
-  "Watts": 580
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "10:00",
-  "Watts": 443
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "11:00",
-  "Watts": 675
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "12:00",
-  "Watts": 234
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "13:00",
-  "Watts": 324
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "14:00",
-  "Watts": 565
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "15:00",
-  "Watts": 675
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "16:00",
-  "Watts": 456
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "17:00",
-  "Watts": 456
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "18:00",
-  "Watts": 977
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "19:00",
-  "Watts": 123
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "20:00",
-  "Watts": 465
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "21:00",
-  "Watts": 565
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "22:00",
-  "Watts": 345
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "23:00",
-  "Watts": 441
+  "Watts": Math.floor((Math.random() * 10) + 1)
 }];
 
 // Create axes
@@ -125,6 +125,57 @@ hoverState.properties.fillOpacity = 1;
 series.columns.template.adapter.add("fill", function(fill, target) {
   return chart.colors.getIndex(target.dataItem.index);
 });
+
+// summing
+let sumDataday = 0
+chart.data.forEach(element => {
+  
+  sumDataday += element.Watts
+  
+});
+const chartDailySum = document.getElementById(chartId);
+const chartDayIndex = chartDailySum.dataset.id;
+// console.log(chartDayIndex)
+document.getElementById(`daily-sum${chartDayIndex}`).innerText = sumDataday
+
+// highest value
+var highestArrayDay = []
+chart.data.forEach(element => {
+  
+  highestArrayDay.push(element.Watts)
+});
+var highestValueDay = Math.max(...highestArrayDay);
+
+const dayHighId = document.getElementById(chartId);
+const dayHighIndex = dayHighId.dataset.id;
+// console.log(dayHighIndex)
+
+document.getElementById(`daily-high${dayHighIndex}`).innerText = highestValueDay
+
+// lowest value
+var lowestArrayDay  = []
+chart.data.forEach(element => {
+  
+  lowestArrayDay.push(element.Watts)
+});
+var lowestValueDay = Math.min(...lowestArrayDay);
+
+const dayLowId = document.getElementById(chartId);
+const dayLowIndex = dayLowId.dataset.id;
+// console.log(charHighIndex)
+
+document.getElementById(`daily-low${dayLowIndex}`).innerText = lowestValueDay
+
+// price 
+
+var dailyPrice = sumDataday * 20;
+
+const dailyPriceCost = document.getElementById(chartId);
+const dailyPriceIndex = dailyPriceCost.dataset.id;
+
+document.getElementById(`daily-price${dailyPriceIndex}`).innerText = dailyPrice
+
+
 
 // Cursor
 chart.cursor = new am4charts.XYCursor();
