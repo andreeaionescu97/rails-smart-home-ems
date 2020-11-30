@@ -1,8 +1,6 @@
 class HomesController < ApplicationController
     def index
-        @homes = Home.all
-
-
+        @homes = current_user.homes
     end
 
     def show
