@@ -3,17 +3,18 @@
   <h3 class="index-title">All Homes</h3>
   <div class="home-cards d-flex flex-column">
     <% @homes.each do |home| %>
+    <div>
+    <div class="home-container d-flex justify-content-between">
       <div class="home-card">
         <p class="home-name-card"><%= link_to home.name, home_path(home), class: "home-name-card" %></p>
 
-        <!-- <p class="location-home-show"> <i class="fas fa-location-arrow"></i><span>&nbsp;</span><%#= @home.location %> </p> -->
-        <button class="btn-home"><%= link_to "Edit", edit_home_path(home), class: "btn-home-text" %></button>
-        <%# <%= link_to "Edit", edit_home_path(home) %>
 
 
-        <p class="home-location-card"><i class="fas fa-location-arrow"></i><span>&nbsp;</span><%= home.location %></p> 
+        <p class="home-location-card"><i class="fas fa-location-arrow"></i><span>&nbsp;</span><%= home.location %></p>
+        </div>
+        <div class="home-buttons">
 
-        <%= link_to "Edit", edit_home_path(home), class: "btn-home btn-home-text" %></button>
+       <%= link_to "Edit", edit_home_path(home), class: "btn-home btn-home-text" %>
 
 
 
@@ -23,8 +24,15 @@
         <%# <%= link_to "Delete Home", home_path(home.id), method: :delete, data: { confirm: "Are you sure?" } %> <!--This line is the original delete link> %>-->
 
         <!-- <button class="btn-home"><%#= link_to "Edit", edit_home_path, class: "btn-home-text" %></button> -->
-        <hr>
+
       </div>
+
+    </div>
+    <hr>
+  </div>
+
+
+
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
