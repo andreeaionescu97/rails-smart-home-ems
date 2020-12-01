@@ -67,6 +67,7 @@ label {
 #horizontal-dots-preloader {
   $animation-speed: 2000ms;
   $dot-size: 10px;
+  width: 90px;
 
   top: 50%;
   left: 50%;
@@ -132,6 +133,10 @@ label {
 .connected-devices {
   width: 600px;
 
+}
+
+.connected-svg-container {
+  width: 800px !important;
 }
 
 .container-show-1 {
