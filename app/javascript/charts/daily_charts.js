@@ -135,7 +135,7 @@ chart.data.forEach(element => {
 });
 const chartDailySum = document.getElementById(chartId);
 const chartDayIndex = chartDailySum.dataset.id;
-// console.log(chartDayIndex)
+// console.log(chartDayIndex);
 document.getElementById(`daily-sum${chartDayIndex}`).innerText = sumDataday
 
 // highest value
