@@ -8,9 +8,48 @@
 <hr>
 <div class="container-show-2 d-flex justify-content-between">
   <div>
+<%# the big graph start  %>
+
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="daily-tab" data-toggle="tab" href="#daily_total" role="tab" aria-controls="daily" aria-selected="true">daily</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="weekly-tab" data-toggle="tab" href="#weekly_total" role="tab" aria-controls="weekly" aria-selected="false">weekly</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="monthly-tab" data-toggle="tab" href="#monthly_total" role="tab" aria-controls="monthly" aria-selected="false">monthly</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="daily_total" role="tabpanel" aria-labelledby="daily-tab">
+      <div class="daily-amcharts-total" id="daily_total_div" style="width: 600px; height: 400px;"></div>
+
+  </div>
+  <div class="tab-pane fade" id="weekly_total" role="tabpanel" aria-labelledby="weekly-tab">
+      <div class="weekly-amcharts-total" id="weekly_total_div" style="width: 600px; height: 400px;"></div>
+
+  </div>
+  <div class="tab-pane fade" id="monthly_total" role="tabpanel" aria-labelledby="monthly-tab">
+      <div class="monthly-amcharts-total" id="monthly_total_div" style="width: 600px; height: 400px;"></div>
+
+  </div>
+</div>
+
+
+
+
+<%# the big graph code end  %>
+
 <% @devices.each_with_index do |device,index| %>
- <p class="device-name"><%= device.name %></p>
+ <p class="device-name" id="name<%=index%>"><%= device.name %></p>
  <p class="device-category"><%= device.category %></p>
+
+
+
+
+
 <%# this is the beginign of drop down  %>
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
@@ -25,8 +64,11 @@
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="daily_<%=index%>" role="tabpanel" aria-labelledby="daily-tab">
-                                    <h1>Average</h1>
+                                    <h1>sum</h1>
               <h1 id="daily-sum<%=index%>"></h1>
+
+
+
 
                    <h1>high</h1>
               <h1 id="daily-high<%=index%>"></h1>
@@ -42,7 +84,7 @@
 
   </div>
   <div class="tab-pane fade" id="weekly_<%=index%>" role="tabpanel" aria-labelledby="weekly-tab">
-                    <h1>Average</h1>
+                    <h1>sum</h1>
               <h1 id="weekly-sum<%=index%>"></h1>
 
                    <h1>high</h1>
@@ -64,7 +106,7 @@
 
   </div>
   <div class="tab-pane fade" id="monthly_<%=index%>" role="tabpanel" aria-labelledby="monthly-tab">
-                                  <h1>Average</h1>
+                                  <h1>sum</h1>
               <h1 id="monthly-sum<%=index%>"></h1>
 
                    <h1>high</h1>

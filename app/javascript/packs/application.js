@@ -37,6 +37,12 @@ import { monthlyCharts } from '../charts/monthly_charts';
 import { dailyChartsPrice } from '../charts/daily_price_charts';
 import { weeklyChartsPrice } from '../charts/weekly_price_charts';
 import { monthlyChartsPrice } from '../charts/monthly_price_charts';
+import { dailyTotalChart } from '../charts/daily_total_charts';
+import { weeklyTotalChart } from '../charts/weekly_total_charts';
+import { monthlyTotalChart } from '../charts/monthly_total_charts';
+
+
+
 
 
 
@@ -102,6 +108,31 @@ const monthlyAmPrice = document.querySelectorAll(".monthly-amcharts-price")
 monthlyAmPrice.forEach(chart => {
   monthlyChartsPrice(chart.id);
 });
+
+// daily  total chart
+
+const dailyTotalChartId = document.querySelectorAll(".daily-amcharts-total")
+dailyTotalChartId.forEach(chart => {
+  dailyTotalChart(chart.id);
+});
+
+
+// weekly  total chart
+
+const weeklyTotalChartId = document.querySelectorAll(".weekly-amcharts-total")
+weeklyTotalChartId.forEach(chart => {
+  weeklyTotalChart(chart.id);
+});
+
+// monthly  total chart
+
+const monthlyTotalChartId = document.querySelectorAll(".monthly-amcharts-total")
+monthlyTotalChartId.forEach(chart => {
+  monthlyTotalChart(chart.id);
+});
+
+
+
 
 //monthly sum of charts 
 // var sum = 0
