@@ -47,9 +47,9 @@ ActiveRecord::Schema.define(version: 2020_12_01_120658) do
   create_table "homes", force: :cascade do |t|
     t.string "name"
     t.text "location"
-    t.string "eco_function", default: "off"
-    t.string "home_away_function", default: "off"
-    t.string "history", default: ""
+    t.string "eco_function"
+    t.string "home_away_function"
+    t.string "history"
     t.datetime "daily"
     t.integer "bill"
     t.bigint "user_id", null: false
