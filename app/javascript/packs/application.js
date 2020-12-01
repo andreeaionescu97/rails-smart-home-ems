@@ -40,6 +40,8 @@ import { monthlyChartsPrice } from '../charts/monthly_price_charts';
 
 
 
+// Geomaps stuff
+ import { initMapbox } from '../plugins/init_mapbox';
 
 
 
@@ -63,6 +65,10 @@ document.addEventListener('turbolinks:load', () => {
       container.classList.remove('right-panel-active');
     });
   }
+
+
+    initMapbox();
+
 
 // daily charts 
 const charts = document.querySelectorAll(".charts")

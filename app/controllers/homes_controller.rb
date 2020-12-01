@@ -1,6 +1,14 @@
 class HomesController < ApplicationController
     def index
         @homes = current_user.homes
+
+        @markers = @homes.geocoded.map do |home|
+            {
+              lat: home.latitude,
+              lng: home.longitude
+            }
+        end
+
     end
 
     def show
@@ -17,7 +25,7 @@ class HomesController < ApplicationController
 
     def create
         # @user = current_user
-        @home = Home.new(home_params)
+        @home = Home.create(home_params)
         # @home = Home.find(params[:id])
         @home.user = current_user
         if @home.save!
@@ -57,7 +65,7 @@ class HomesController < ApplicationController
     private
 
     def home_params
-        params.require(:home).permit(:name, :location, :eco_function, :home_away_function)
+        params.require(:home).permit(:name, :location)
     end
 
 end
