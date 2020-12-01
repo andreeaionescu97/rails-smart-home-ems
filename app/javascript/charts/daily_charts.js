@@ -19,16 +19,16 @@ chart.data = [{
   "Watts": Math.floor((Math.random() * 10) + 1)
 }, {
   "Time": "01:00",
-  "Watts": Math.floor((Math.random() * 10) + 1)
+  "Watts": Math.floor((Math.random() * 9) + 1)
 }, {
   "Time": "02:00",
-  "Watts": Math.floor((Math.random() * 10) + 1)
+  "Watts": Math.floor((Math.random() * 9) + 1)
 }, {
   "Time": "03:00",
-  "Watts": Math.floor((Math.random() * 10) + 1)
+  "Watts": Math.floor((Math.random() * 9) + 1)
 }, {
   "Time": "04:00",
-  "Watts": Math.floor((Math.random() * 10) + 1)
+  "Watts": Math.floor((Math.random() * 8) + 1)
 }, {
   "Time": "05:00",
   "Watts": Math.floor((Math.random() * 10) + 1)

@@ -3,9 +3,9 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
-const priceWatts = 20;
+const priceWattsMonthly = 20;
 
-const dailyChartsPrice = (chartId) => {
+const monthlyChartsPrice = (chartId) => {
 
 /* Chart code */
 // Themes begin
@@ -17,81 +17,21 @@ let chart = am4core.create(chartId, am4charts.XYChart);
 
 // Add data
 chart.data = [{
-  "date": "00:00",
-  "value": Math.floor((Math.random() * (10 * priceWatts) + 8))
+  "date": "30-11-2020",
+  "value": Math.floor((Math.random() * (10 * priceWattsMonthly) + 8))
 }, {
-  "date": "01:00",
-  "value": Math.floor((Math.random() * (9 * priceWatts) + 7))
+  "date": "07-12-2020",
+  "value": Math.floor((Math.random() * (9 * priceWattsMonthly) + 7))
 }, {
-  "date": "02:00",
-  "value": Math.floor((Math.random() * (9 * priceWatts) + 7))
+  "date": "14-12-2020",
+  "value": Math.floor((Math.random() * (9 * priceWattsMonthly) + 7))
 }, {
-  "date": "03:00",
-  "value": Math.floor((Math.random() * (9 * priceWatts) + 7))
-}, {
-  "date": "04:00",
-  "value": Math.floor((Math.random() * (8 * priceWatts) + 6))
-}, {
-  "date": "05:00",
-  "value": Math.floor((Math.random() * (8 * priceWatts) + 6))
-}, {
-  "date": "06:00",
-  "value": 22
-}, {
-  "date": "07:00",
-  "value": 23
-}, {
-  "date": "08:00",
-  "value": 20
-}, {
-  "date": "09:00",
-  "value": 17
-}, {
-  "date": "10:00",
-  "value": 16
-}, {
-  "date": "11:00",
-  "value": 18
-}, {
-  "date": "12:00",
-  "value": 21
-}, {
-  "date": "13:00",
-  "value": 26
-}, {
-  "date": "14:00",
-  "value": 24
-}, {
-  "date": "15:00",
-  "value": 29
-}, {
-  "date": "16:00",
-  "value": 32
-}, {
-  "date": "17:00",
-  "value": 18
-}, {
-  "date": "18:00",
-  "value": 24
-}, {
-  "date": "19:00",
-  "value": 22
-}, {
-  "date": "20:00",
-  "value": 18
-}, {
-  "date": "21:00",
-  "value": 19
-}, {
-  "date": "22:00",
-  "value": 14
-}, {
-  "date": "23:00",
-  "value": 15
+  "date": "21-12-2020",
+  "value": Math.floor((Math.random() * (9 * priceWattsMonthly) + 7))
 }];
 
 // Set input format for the dates
-chart.dateFormatter.inputDateFormat = "HH:MM";
+chart.dateFormatter.inputDateFormat = "dd-MM-yyyy";
 
 // Create axes
 let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
@@ -144,4 +84,4 @@ dateAxis.keepSelection = true;
 
 };
 
-export { dailyChartsPrice }
+export { monthlyChartsPrice }
