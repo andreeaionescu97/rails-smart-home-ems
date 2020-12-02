@@ -60,5 +60,45 @@ series.columns.template.strokeOpacity = 0;
 series.columns.template.adapter.add("fill", function(fill, target) {
   return chart.colors.getIndex(target.dataItem.index);
 });
+
+
+// summing
+let sumDataWeekTotal = 0
+chart.data.forEach(element => {
+  
+  sumDataWeekTotal += element.visits
+});
+
+// console.log(chartWeekIndex)
+document.getElementById("total-week-sum").innerText = sumDataWeekTotal
+
+
+// highest value
+var highestArrayTotalWeek = []
+chart.data.forEach(element => {
+  highestArrayTotalWeek.push(element.visits)
+});
+var highestValueTotalWeek = Math.max(...highestArrayTotalWeek);
+
+// console.log(monthHighIndex)
+document.getElementById("total-week-high").innerText = highestValueTotalWeek
+// lowest value
+var lowestArrayTotalWeek  = []
+chart.data.forEach(element => {
+  lowestArrayTotalWeek.push(element.visits)
+});
+var lowestValueTotalWeek = Math.min(...lowestArrayTotalWeek);
+// console.log(charHighIndex)
+document.getElementById("total-week-low").innerText = lowestValueTotalWeek
+
+// price
+var weekPriceTotal = sumDataWeekTotal * 20;
+
+
+document.getElementById("total-week-price").innerText = weekPriceTotal
+
+
+
+
 };
 export { weeklyTotalChart }

@@ -61,6 +61,48 @@ series.columns.template.strokeOpacity = 0;
 series.columns.template.adapter.add("fill", function(fill, target) {
   return chart.colors.getIndex(target.dataItem.index);
 });
+
+
+// summing
+let sumDataMonthTotal = 0
+chart.data.forEach(element => {
+  
+  sumDataMonthTotal += element.visits
+});
+
+// console.log(chartWeekIndex)
+document.getElementById("total-month-sum").innerText = sumDataMonthTotal
+
+
+// highest value
+var highestArrayTotalMonth = []
+chart.data.forEach(element => {
+  highestArrayTotalMonth.push(element.visits)
+});
+var highestValueTotalMonth = Math.max(...highestArrayTotalMonth);
+
+// console.log(monthHighIndex)
+document.getElementById("total-month-high").innerText = highestValueTotalMonth
+// lowest value
+var lowestArrayTotalMonth  = []
+chart.data.forEach(element => {
+  lowestArrayTotalMonth.push(element.visits)
+});
+var lowestValueTotalMonth = Math.min(...lowestArrayTotalMonth);
+// console.log(charHighIndex)
+document.getElementById("total-month-low").innerText = lowestValueTotalMonth
+
+
+// price
+var monthPriceTotal = sumDataMonthTotal * 20;
+
+
+document.getElementById("total-month-price").innerText = monthPriceTotal
+
+
+
+
+
 };
 export { monthlyTotalChart }
 
