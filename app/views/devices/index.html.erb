@@ -1,12 +1,12 @@
 
-<div class="page-padding">
+<div class="page-padding-dashboard">
   <h3 class="name-home-show">Environment: &#8287;<%= @home.name %></h3>
     <p class="location-home-show"> <i class="fas fa-location-arrow"></i><span>&nbsp;</span><%= @home.location %> </p>
 <hr class="mb-5">
 
 <h4> Your Devices </h4>
 <hr>
-<div class="container-show-2 d-flex justify-content-between">
+<div class="container-show-dashboard d-flex justify-content-between">
   <div>
 <%# the big graph start  %>
 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -59,55 +59,83 @@
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="daily_<%=index%>" role="tabpanel" aria-labelledby="daily-tab">
         <div class="device-charts-card d-flex justify-content-between align-items-center">
-         <div data-id="<%=index%>" class="charts" id="daily_<%=index%>_div" style="width: 300px; height: 300px;"></div>
-          <div data-id="<%=index%>"  class="daily-amcharts-price" id="daily_price_<%=index%>_div" style="width: 300px; height: 300px;"></div>
+          <div class="chart-card">
+           <div data-id="<%=index%>" class="charts" id="daily_<%=index%>_div" style="width: 400px; height: 400px;"></div>
+          </div>
+          <div class="chart-card">
+           <div data-id="<%=index%>"  class="daily-amcharts-price" id="daily_price_<%=index%>_div" style="width: 400px; height: 400px;"></div>
+          </div>
           <div class="chart-sum-card">
-            <h1>sum</h1>
-            <h1 id="daily-sum<%=index%>"></h1>
-            <h1>high</h1>
-            <h1 id="daily-high<%=index%>"></h1>
-            <h1>low</h1>
-            <h1 id="daily-low<%=index%>"></h1>
-            <h1>price</h1>
-            <h1 id="daily-price<%=index%>"></h1>
+            <div class="total-card">
+              <p class="card-title">sum</p>
+              <p id="daily-sum<%=index%>"></p>
+            </div>
+            <div class="total-card">
+              <p class="card-title">high</p>
+              <p class="card-value" id="daily-high<%=index%>"></p>
+            </div>
+            <div class="total-card">
+              <p class="card-title">low</p>
+              <p class="card-value" id="daily-low<%=index%>"></p>
+            </div>
+            <div class="total-card">
+              <p class="card-title">price</p>
+              <p class="card-value" id="daily-price<%=index%>"></p>
+            </div>
           </div>
         </div>
       </div>
       <div class="tab-pane fade" id="weekly_<%=index%>" role="tabpanel" aria-labelledby="weekly-tab">
         <div class="device-charts-card d-flex justify-content-between align-items-center">
-         <div data-id="<%=index%>" class="week-amcharts" id="weekly_<%=index%>_div" style="width: 300px; height: 300px;"></div>
-          <div data-id="<%=index%>"  class="weekly-amcharts-price" id="weekly_price_<%=index%>_div" style="width: 300px; height: 300px;"></div>
+         <div data-id="<%=index%>" class="week-amcharts" id="weekly_<%=index%>_div" style="width: 400px; height: 400px;"></div>
+          <div data-id="<%=index%>"  class="weekly-amcharts-price" id="weekly_price_<%=index%>_div" style="width: 400px; height: 400px;"></div>
           <div class="chart-sum-card">
-            <h1>sum</h1>
-            <h1 id="weekly-sum<%=index%>"></h1>
-            <h1>high</h1>
-            <h1 id="weekly-high<%=index%>"></h1>
-            <h1>low</h1>
-            <h1 id="weekly-low<%=index%>"></h1>
-            <h1>price</h1>
-            <h1 id="weekly-price<%=index%>"></h1>
+            <div class="total-card">
+              <p class="card-title">sum</p>
+              <p class="card-value" id="weekly-sum<%=index%>"></p>
+            </div>
+            <div class="total-card">
+              <p class="card-title">high</p>
+              <p class="card-value" id="weekly-high<%=index%>"></p>
+            </div>
+            <div class="total-card">
+              <p class="card-title">low</p>
+              <p class="card-value" id="weekly-low<%=index%>"></p>
+            </div>
+            <div class="total-card">
+              <p class="card-title">price</p>
+              <p class="card-value" id="weekly-price<%=index%>"></p>
+            </div>
           </div>
         </div>
       </div>
       <div class="tab-pane fade" id="monthly_<%=index%>" role="tabpanel" aria-labelledby="monthly-tab">
         <div class="device-charts-card d-flex justify-content-between align-items-center">
-         <div data-id="<%=index%>" class="monthly-amcharts" id="monthly_<%=index%>_div" style="width: 300px; height: 300px;"></div>
-          <div data-id="<%=index%>"  class="monthly-amcharts-price" id="monthly_price_<%=index%>_div" style="width: 300px; height: 300px;"></div>
+         <div data-id="<%=index%>" class="monthly-amcharts" id="monthly_<%=index%>_div" style="width: 400px; height: 400px;"></div>
+          <div data-id="<%=index%>"  class="monthly-amcharts-price" id="monthly_price_<%=index%>_div" style="width: 400px; height: 400px;"></div>
           <div class="chart-sum-card">
-            <h1>sum</h1>
-            <h1 id="monthly-sum<%=index%>"></h1>
-            <h1>high</h1>
-            <h1 id="monthly-high<%=index%>"></h1>
-            <h1>low</h1>
-            <h1 id="monthly-low<%=index%>"></h1>
-            <h1>price</h1>
-            <h1 id="monthly-price<%=index%>"></h1>
+            <div class="total-card">
+              <p class="card-title">sum</p>
+              <p class="card-value" id="monthly-sum<%=index%>"></p>
+            </div>
+            <div class="total-card">
+              <p class="card-title">high</p>
+              <p class="card-value" id="monthly-high<%=index%>"></p>
+            </div>
+            <div class="total-card">
+              <p class="card-title">low</p>
+              <p class="card-value" id="monthly-low<%=index%>"></p>
+            </div>
+            <div class="total-card">
+              <p class="card-title">price</p>
+              <p class="card-value" id="monthly-price<%=index%>"></p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   <% end %>
-
+</div>
 
 <button class="btn-home"><%= link_to "Return", homes_path, class: "btn-home-text"%></button>
 
