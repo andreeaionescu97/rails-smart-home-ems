@@ -1,6 +1,6 @@
 
 <div class="page-padding">
-  <h3 class="index-title">All Homes</h3>
+  <h3 class="index-title">Your Homes</h3>
   <div class="home-cards d-flex flex-column">
     <% @homes.each do |home| %>
     <div>
@@ -14,6 +14,7 @@
         </div>
         <div class="home-buttons">
 
+       <%= link_to "Dasboard", home_devices_path(home.id), class: "btn-home btn-home-text" %>
        <%= link_to "Edit", edit_home_path(home), class: "btn-home btn-home-text" %>
 
 
