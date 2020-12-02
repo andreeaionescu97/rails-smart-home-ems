@@ -10,36 +10,27 @@
 </div>
 <hr>
 <div class="container-show-1 d-flex justify-content-between">
+  <% @home.devices.each do |device| %>
+
   <div class="connected-svg-container d-flex justify-content-between">
    <div class="connected-svg">
-    <%= image_tag "tv.svg", class: "svg-size" %>
-   </div>
-  <div id="horizontal-dots-preloader">
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-  </div>
-   <div class="connected-svg">
-    <%= image_tag "assistant.svg", class: "svg-size" %>
-   </div>
-  <div id="horizontal-dots-preloader">
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-  </div>
-  <div class="connected-svg">
-    <%= image_tag "thermostat.svg", class: "svg-size" %>
-   </div>
- </div>
+    <% if device.category.photo.attached? %>
+    <%= cl_image_tag device.category.photo.key, height: 100, width: 100 %>
+    <% end %>
 
+   </div>
+  <div id="horizontal-dots-preloader">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+
+ </div>
+<% end %>
 
 <div class="functions">
 

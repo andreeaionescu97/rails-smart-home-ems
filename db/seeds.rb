@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
+
 puts "Destroying old devices, users and homes"
 Device.destroy_all
 Home.destroy_all
@@ -35,9 +37,25 @@ puts "Creating new devices"
 #     rand(250..750)
 #
 # end
-category1 = Category.create(name: "Smart Home Assistant")
+category1 = Category.new(name: "Smart Home Assistant")
+file1 = URI.open('https://res.cloudinary.com/globaldigitalassetsyergiescorpltd/image/upload/v1606904685/assistant_hrhlcg.svg')
+category1.photo.attach(io: file1, filename: 'assistant.svg', content_type: 'image/svg')
+category1.save
+
 category2 = Category.create(name: "Smart Thermostat")
 category3 = Category.create(name: "Smart Fridge")
+category4 = Category.create(name: "Smart Lock")
+category5 = Category.create(name: "Smart Washing Macine")
+category6 = Category.create(name: "Smart Vacuum Cleaner")
+category7 = Category.create(name: "Smart Output")
+category8 = Category.create(name: "Smart TV")
+category9 = Category.create(name: "Smart Hub")
+category10 = Category.create(name: "Smart Lights")
+category11 = Category.create(name: "Smart Curtains")
+category12 = Category.create(name: "Smart Mirror")
+category13 = Category.create(name: "Smart Vase")
+category14 = Category.create(name: "Smart Clock")
+category15 = Category.create(name: "Smart Security Camera")
 
 
 
