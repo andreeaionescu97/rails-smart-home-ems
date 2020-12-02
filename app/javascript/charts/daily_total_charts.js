@@ -16,22 +16,22 @@ chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
 // putting the data in to big chart
 
 
-let arryNum = [0,1,2,3];
+let arryNum = document.getElementById("num_of_devices").dataset.num2.replace('[', '').replace(']', '').split(',');
 // const chartDailySumTotalId = document.getElementById(chartId)
 // const chartDayTotalId = chartDailySumTotalId.dataset.id
 // let test101 = document.getElementById(chartId);
 
 let savingChartData = arryNum.map(num => {
-    let savingSum = parseInt(document.getElementById(`daily-sum${num}`).innerText, 10);
-    let savingName = document.getElementById(`name${num}`).innerText;
-    return { 
+    let removeArray = parseInt(num ,10)
+    let savingSum = parseInt(document.getElementById(`daily-sum${removeArray}`).innerText, 10);
+    let savingName = document.getElementById(`name${removeArray}`).innerText;
+    return {
     country: savingName,
     visits: savingSum
     }
     // console.log(savingName,savingSum)
  //console.log(document.getElementById(`daily-sum${chartId}`))
 });
-
 
 // putting the data in to big chart
 
