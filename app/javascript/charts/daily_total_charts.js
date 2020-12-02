@@ -16,7 +16,7 @@ chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
 // putting the data in to big chart
 
 
-let arryNum = [0,1,2,3];
+let arryNum = [0,1,2];
 // const chartDailySumTotalId = document.getElementById(chartId)
 // const chartDayTotalId = chartDailySumTotalId.dataset.id
 // let test101 = document.getElementById(chartId);
@@ -24,7 +24,7 @@ let arryNum = [0,1,2,3];
 let savingChartData = arryNum.map(num => {
     let savingSum = parseInt(document.getElementById(`daily-sum${num}`).innerText, 10);
     let savingName = document.getElementById(`name${num}`).innerText;
-    return { 
+    return {
     country: savingName,
     visits: savingSum
     }
