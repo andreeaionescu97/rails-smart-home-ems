@@ -16,14 +16,14 @@ chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
 // putting the data in to big chart
 
 
-let arryNumPrice = [0,1,2,3];
+let arryNumPrice = document.getElementById("num_of_devices").dataset.num2.replace('[', '').replace(']', '').split(',');
 // const chartDailySumTotalId = document.getElementById(chartId)
 // const chartDayTotalId = chartDailySumTotalId.dataset.id
 // let test101 = document.getElementById(chartId);
-
 let savingChartDataPrice = arryNumPrice.map(num => {
-    let savingSumPrice = parseInt(document.getElementById(`daily-price${num}`).innerText, 10);
-    let savingNamePrice = document.getElementById(`name${num}`).innerText;
+    let removeArrayPrice = parseInt(num ,10)
+    let savingSumPrice = parseInt(document.getElementById(`daily-price${removeArrayPrice}`).innerText, 10);
+    let savingNamePrice = document.getElementById(`name${removeArrayPrice}`).innerText;
     return {
     country: savingNamePrice,
     visits: savingSumPrice
@@ -54,8 +54,8 @@ image.width = 20;
 image.height = 20;
 image.verticalCenter = "middle";
 image.adapter.add("href", (href, target)=>{
-     
- 
+
+
   let category = target.dataItem.category;
 //   console.log("category is daily :");
 //   console.log(category);
