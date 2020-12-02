@@ -82,6 +82,51 @@ series.columns.template.adapter.add("fill", function(fill, target) {
   return chart.colors.getIndex(target.dataItem.index);
 });
 
+// summing
+let sumDatadayTotal = 0
+chart.data.forEach(element => {
+  
+  sumDatadayTotal += element.visits
+});
+
+// console.log(chartWeekIndex)
+document.getElementById("total-day-sum").innerText = sumDatadayTotal
+
+
+// highest value
+var highestArrayTotalDay = []
+chart.data.forEach(element => {
+  highestArrayTotalDay.push(element.visits)
+});
+var highestValueTotalDay = Math.max(...highestArrayTotalDay);
+
+// console.log(monthHighIndex)
+document.getElementById("total-day-high").innerText = highestValueTotalDay
+// lowest value
+var lowestArrayTotalDay  = []
+chart.data.forEach(element => {
+  lowestArrayTotalDay.push(element.visits)
+});
+var lowestValueTotalDay = Math.min(...lowestArrayTotalDay);
+// console.log(charHighIndex)
+document.getElementById("total-day-low").innerText = lowestValueTotalDay
+// price
+var dayPriceTotal = sumDatadayTotal * 20;
+
+
+document.getElementById("total-day-price").innerText = dayPriceTotal
+
+
+
+
+
+
+
+
+
+
+
+
 };
 
 export { dailyTotalChart }
