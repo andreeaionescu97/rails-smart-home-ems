@@ -4,7 +4,7 @@ import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
 
-const dailyTotalPriceChart = (chartId) => {
+const weeklyTotalPriceChart2 = (chartId) => {
 /* Chart code */
 // Themes begin
 am4core.useTheme(am4themes_animated);
@@ -16,19 +16,20 @@ chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
 // putting the data in to big chart
 
 
-let arryNumPrice = [0,1,2,3];
-// const chartDailySumTotalId = document.getElementById(chartId)
-// const chartDayTotalId = chartDailySumTotalId.dataset.id
+let arryNumPriceWeekly = [0,1,2,3];
+// const chartWeeklySumTotalId = document.getElementById(chartId)
+// const chartDayTotalId = chartWeeklySumTotalId.dataset.id
 // let test101 = document.getElementById(chartId);
 
-let savingChartDataPrice = arryNumPrice.map(num => {
-    let savingSumPrice = parseInt(document.getElementById(`daily-price${num}`).innerText, 10);
-    let savingNamePrice = document.getElementById(`name${num}`).innerText;
+let savingChartDataPriceWeekly = arryNumPriceWeekly.map(num => {
+    let savingSumPriceWeekly = parseInt(document.getElementById(`weekly-price${num}`).innerText, 10);
+    let savingNamePriceWeekly = document.getElementById(`name${num}`).innerText;
+    // console.log(savingNamePriceWeekly,savingSumPriceWeekly);
     return {
-    country: savingNamePrice,
-    visits: savingSumPrice
+    country: savingNamePriceWeekly,
+    visits: savingSumPriceWeekly
     }
- //console.log(document.getElementById(`daily-sum${chartId}`))
+ //console.log(document.getElementById(`weekly-sum${chartId}`))
 });
 
 
@@ -37,7 +38,7 @@ let savingChartDataPrice = arryNumPrice.map(num => {
 
 
 // console.log(savingChartData)
-chart.data = savingChartDataPrice
+chart.data = savingChartDataPriceWeekly
 
 let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
 categoryAxis.renderer.grid.template.location = 0;
@@ -54,10 +55,9 @@ image.width = 20;
 image.height = 20;
 image.verticalCenter = "middle";
 image.adapter.add("href", (href, target)=>{
-     
- 
   let category = target.dataItem.category;
-//   console.log("category is daily :");
+  
+//   console.log("category is :");
 //   console.log(category);
   if(category){
     return "https://www.amcharts.com/wp-content/uploads/flags/" + category.split(" ").join("-").toLowerCase() + ".svg";
@@ -88,4 +88,4 @@ series.columns.template.adapter.add("fill", function(fill, target) {
 
 };
 
-export { dailyTotalPriceChart }
+export { weeklyTotalPriceChart2 }

@@ -40,6 +40,12 @@ import { monthlyChartsPrice } from '../charts/monthly_price_charts';
 import { dailyTotalChart } from '../charts/daily_total_charts';
 import { weeklyTotalChart } from '../charts/weekly_total_charts';
 import { monthlyTotalChart } from '../charts/monthly_total_charts';
+import { dailyTotalPriceChart } from '../charts/daily_total_price_charts';
+import { weeklyTotalPriceChart2 } from '../charts/weekly_total_price_charts';
+import { monthlyTotalPriceChart2 } from '../charts/monthly_total_price_charts';
+
+
+
 
 
 
@@ -135,6 +141,27 @@ weeklyTotalChartId.forEach(chart => {
 const monthlyTotalChartId = document.querySelectorAll(".monthly-amcharts-total")
 monthlyTotalChartId.forEach(chart => {
   monthlyTotalChart(chart.id);
+});
+
+// daily  total price chart
+
+const dailyTotalPriceChartId = document.querySelectorAll(".daily-amcharts-total-price")
+dailyTotalPriceChartId.forEach(chart => {
+  dailyTotalPriceChart(chart.id);
+});
+
+// weekly  total price chart
+
+const weeklyTotalPriceChartId = document.querySelectorAll(".weekly-amcharts-total-price")
+weeklyTotalPriceChartId.forEach(chart => {
+  weeklyTotalPriceChart2(chart.id);
+});
+
+// monthly  total price chart
+
+const monthlyTotalPriceChartId = document.querySelectorAll(".monthly-amcharts-total-price")
+monthlyTotalPriceChartId.forEach(chart => {
+  monthlyTotalPriceChart2(chart.id);
 });
 
 
