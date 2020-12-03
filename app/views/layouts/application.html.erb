@@ -44,7 +44,10 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= render 'shared/sidebar' %>
-    <%= yield %>
+    <div class="d-flex">
+      <%= render 'shared/sidebar' %>
+      <%= yield %>
+    </div>
+    <%#= render 'shared/footer' %>
   </body>
 </html>
