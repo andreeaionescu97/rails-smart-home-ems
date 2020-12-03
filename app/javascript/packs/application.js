@@ -41,9 +41,20 @@ import { monthlyTotalPriceChart2 } from '../charts/monthly_total_price_charts';
  import { initMapbox } from '../plugins/init_mapbox';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
+
+const menuButton = document.getElementById("openSidebarMenu");
+const toggleContainer = document.querySelector(".page-padding-dashboard");
+if(menuButton){
+  menuButton.addEventListener("click", (event) => {
+    toggleContainer.classList.toggle("sidebar-closed");
+  })
+}
+
+
   console.log(window.location.pathname == "");
   console.log("loaded log-in");
   let sighnUpButton = document.querySelector('#signUp');
+  console.log(sighnUpButton);
   let sighnInButton = document.querySelector('#signIn');
   let container = document.querySelector('#container');
   if (sighnUpButton) {

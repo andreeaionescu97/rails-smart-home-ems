@@ -38,7 +38,12 @@ margin-bottom: 50px;
   padding-left: 100px;
   padding-top: 50px;
   padding-right: 100px;
-  // background-color: #eafbfb;
+  transition: margin-left 250ms ease-in-out;
+  margin-left: -250px;
+}
+
+.sidebar-closed {
+  margin-left: 0px;
 }
 
 .container-show-dashboard {
