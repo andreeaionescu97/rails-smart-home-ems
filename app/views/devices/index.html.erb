@@ -25,19 +25,30 @@
         <div class="total-sum-container d-flex justify-content-between">
           <div class="total-sum-card">
             <p class="card-total-title">Total Energy Consumption</p>
-            <p class="card-total-value" id="total-day-sum"></p>
+            <div class="d-flex justify-content-center">
+              <%= image_tag "line.svg", width: 50, height: 50 %>&#8287; &#8287;<p class="card-total-value" id="total-day-sum"></p>
+            </div>
           </div>
           <div class="total-sum-card">
             <p class="card-total-title">Highest Energy Consumption</p>
-            <p class="card-total-value" id="total-day-high"></p>
+            <div class="d-flex justify-content-center">
+              <%= image_tag "up-line.svg", width: 50, height: 50 %>&#8287; &#8287;
+              <p class="card-total-value" id="total-day-high"></p>
+            </div>
           </div>
           <div class="total-sum-card">
             <p class="card-total-title">Lowest Energy Consumption</p>
-            <p class="card-total-value" id="total-day-low"></p>
+            <div class="d-flex justify-content-center">
+              <%= image_tag "down-line.svg", width: 50, height: 50 %>&#8287; &#8287;
+              <p class="card-total-value" id="total-day-low"></p>
+            </div>
           </div>
           <div class="total-sum-card">
             <p class="card-total-title">Total Price</p>
-            <p class="card-total-value" id="total-day-price"></p>
+            <div class="d-flex justify-content-center">
+              <%= image_tag "pound.svg", width: 50, height: 50 %>&#8287; &#8287;
+              <p class="card-total-value" id="total-day-price"></p>
+            </div>
           </div>
         </div>
         <div  class="total-container d-flex justify-content-between">
