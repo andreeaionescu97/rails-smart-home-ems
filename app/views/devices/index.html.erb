@@ -4,10 +4,10 @@
     <p class="location-home-show"> <i class="fas fa-location-arrow"></i><span>&nbsp;</span><%= @home.location %> </p>
 <hr class="mb-5">
 
-<h4> Your Devices </h4>
+<h4> Total Energy Consumption </h4>
 <hr>
-<div class="container-show-dashboard d-flex justify-content-between">
-  <div>
+
+
 <%# the big graph start  %>
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
@@ -21,55 +21,105 @@
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="daily_total" role="tabpanel" aria-labelledby="daily-tab">
-      <div class="daily-amcharts-total" id="daily_total_div" style="width: 600px; height: 400px;"></div>
-      <div class="daily-amcharts-total-price" id="daily_total_price_div" style="width: 600px; height: 400px;"></div>
-      <h1 id="total-day-sum"></h1>
-      <h1 id="total-day-high"></h1>
-      <h1 id="total-day-low"></h1>
-      <h1 id="total-day-price"></h1>
+    <div class="tab-pane fade show active" id="daily_total" role="tabpanel" aria-labelledby="daily-tab">
+        <div class="total-sum-container d-flex justify-content-between">
+          <div class="total-sum-card">
+            <p class="card-total-title">Total Energy Consumption</p>
+            <p class="card-total-value" id="total-day-sum"></p>
+          </div>
+          <div class="total-sum-card">
+            <p class="card-total-title">Highest Energy Consumption</p>
+            <p class="card-total-value" id="total-day-high"></p>
+          </div>
+          <div class="total-sum-card">
+            <p class="card-total-title">Lowest Energy Consumption</p>
+            <p class="card-total-value" id="total-day-low"></p>
+          </div>
+          <div class="total-sum-card">
+            <p class="card-total-title">Total Price</p>
+            <p class="card-total-value" id="total-day-price"></p>
+          </div>
+        </div>
+        <div  class="total-container d-flex justify-content-between">
+          <div class="daily-amcharts-total" id="daily_total_div" style="width: 600px; height: 500px;"></div>
+          <div class="daily-amcharts-total-price" id="daily_total_price_div" style="width: 600px; height: 500px;"></div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="weekly_total" role="tabpanel" aria-labelledby="weekly-tab">
+       <div class="total-sum-container d-flex justify-content-between">
+          <div class="total-sum-card">
+            <p class="card-total-title">Total Energy Consumption</p>
+            <p class="card-total-value" id="total-week-sum"></p>
+          </div>
+          <div class="total-sum-card">
+            <p class="card-total-title">Highest Energy Consumption</p>
+            <p class="card-total-value" id="total-week-high"></p>
+          </div>
+          <div class="total-sum-card">
+            <p class="card-total-title">Lowest Energy Consumption</p>
+            <p class="card-total-value" id="total-week-low"></p>
+          </div>
+          <div class="total-sum-card">
+            <p class="card-total-title">Total Price</p>
+            <p class="card-total-value" id="total-week-price"></p>
+          </div>
+      </div>
+      <div  class="total-container d-flex justify-content-between">
+        <div class="weekly-amcharts-total" id="weekly_total_div" style="width: 600px; height: 500px;"></div>
+        <div class="weekly-amcharts-total-price" id="weekly_total_price_div" style="width: 600px; height: 500px;"></div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="monthly_total" role="tabpanel" aria-labelledby="monthly-tab">
+       <div class="total-sum-container d-flex justify-content-between">
+          <div class="total-sum-card">
+            <p class="card-total-title">Total Energy Consumption</p>
+            <p class="card-total-value" id="total-month-sum"></p>
+          </div>
+          <div class="total-sum-card">
+            <p class="card-total-title">Highest Energy Consumption</p>
+            <p class="card-total-value" id="total-month-high"></p>
+          </div>
+          <div class="total-sum-card">
+            <p class="card-total-title">Lowest Energy Consumption</p>
+            <p class="card-total-value" id="total-month-low"></p>
+          </div>
+          <div class="total-sum-card">
+            <p class="card-total-title">Total Price</p>
+            <p class="card-total-value" id="total-month-price"></p>
+          </div>
+          </div>
+      <div  class="total-container d-flex justify-content-between">
+        <div class="monthly-amcharts-total" id="monthly_total_div" style="width: 600px; height: 500px;"></div>
+        <div class="monthly-amcharts-total-price" id="monthly_total_price_div" style="width: 600px; height: 500px;"></div>
 
-
+        </div>
+     </div>
   </div>
-  <div class="tab-pane fade" id="weekly_total" role="tabpanel" aria-labelledby="weekly-tab">
-      <div class="weekly-amcharts-total" id="weekly_total_div" style="width: 600px; height: 400px;"></div>
-      <div class="weekly-amcharts-total-price" id="weekly_total_price_div" style="width: 600px; height: 400px;"></div>
-      <h1 id="total-week-sum"></h1>
-      <h1 id="total-week-high"></h1>
-      <h1 id="total-week-low"></h1>
-      <h1 id="total-week-price"></h1>
 
-
-  </div>
-  <div class="tab-pane fade" id="monthly_total" role="tabpanel" aria-labelledby="monthly-tab">
-      <div class="monthly-amcharts-total" id="monthly_total_div" style="width: 600px; height: 400px;"></div>
-      <div class="monthly-amcharts-total-price" id="monthly_total_price_div" style="width: 600px; height: 400px;"></div>
-      <h1 id="total-month-sum"></h1>
-      <h1 id="total-month-high"></h1>
-      <h1 id="total-month-low"></h1>
-      <h1 id="total-month-price"></h1>
-
-  </div>
-</div>
 <%# the big graph code end  %>
+
+<h4> Devices Energy Consumption </h4>
+<hr>
+
 <% num_of_total_arr = [*0..(@devices.length - 1)] %>
-<h1><%= num_of_total_arr %></h1>
+<h1><% num_of_total_arr %></h1>
 <div data-num2 = "<%= num_of_total_arr%>" id="num_of_devices"></div>
 <div>
 
   <% @devices.each_with_index do |device,index| %>
     <p class="device-name" id="name<%=index%>"><%= device.name %></p>
     <p class="device-category"><%= device.category %></p>
+    <hr>
 
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
-        <a class="nav-link btn-format active" id="daily-tab" data-toggle="tab" href="#daily_<%=index%>" role="tab" aria-controls="daily" aria-selected="true"><p>daily</p></a>
+        <a class="nav-link btn-format-device active" id="daily-tab" data-toggle="tab" href="#daily_<%=index%>" role="tab" aria-controls="daily" aria-selected="true">daily</a>
       </li>
       <li class="nav-item" role="presentation">
-        <a class="nav-link btn-format" id="weekly-tab" data-toggle="tab" href="#weekly_<%=index%>" role="tab" aria-controls="weekly" aria-selected="false"><p>weekly</p></a>
+        <a class="nav-link btn-format-device" id="weekly-tab" data-toggle="tab" href="#weekly_<%=index%>" role="tab" aria-controls="weekly" aria-selected="false">weekly</a>
       </li>
       <li class="nav-item" role="presentation">
-        <a class="nav-link btn-format" id="monthly-tab" data-toggle="tab" href="#monthly_<%=index%>" role="tab" aria-controls="monthly" aria-selected="false"><p>monthly</p></a>
+        <a class="nav-link btn-format-device" id="monthly-tab" data-toggle="tab" href="#monthly_<%=index%>" role="tab" aria-controls="monthly" aria-selected="false">monthly</a>
       </li>
     </ul>
 
@@ -82,21 +132,21 @@
           <div class="chart-card">
            <div data-id="<%=index%>"  class="daily-amcharts-price" id="daily_price_<%=index%>_div" style="width: 400px; height: 400px;"></div>
           </div>
-          <div class="chart-sum-card">
+          <div class="chart-sum-card d-flex flex-column justify-content-between">
             <div class="total-card">
-              <p class="card-title">sum</p>
-              <p id="daily-sum<%=index%>"></p>
+              <p class="card-title">Total Energy</p>
+              <p class="card-value" id="daily-sum<%=index%>"></p>
             </div>
             <div class="total-card">
-              <p class="card-title">high</p>
+              <p class="card-title">Highest Energy</p>
               <p class="card-value" id="daily-high<%=index%>"></p>
             </div>
             <div class="total-card">
-              <p class="card-title">low</p>
+              <p class="card-title">Lowest Energy</p>
               <p class="card-value" id="daily-low<%=index%>"></p>
             </div>
             <div class="total-card">
-              <p class="card-title">price</p>
+              <p class="card-title">Total Price</p>
               <p class="card-value" id="daily-price<%=index%>"></p>
             </div>
           </div>
@@ -106,21 +156,21 @@
         <div class="device-charts-card d-flex justify-content-between align-items-center">
          <div data-id="<%=index%>" class="week-amcharts" id="weekly_<%=index%>_div" style="width: 400px; height: 400px;"></div>
           <div data-id="<%=index%>"  class="weekly-amcharts-price" id="weekly_price_<%=index%>_div" style="width: 400px; height: 400px;"></div>
-          <div class="chart-sum-card">
+          <div class="chart-sum-card d-flex flex-column justify-content-between">
             <div class="total-card">
-              <p class="card-title">sum</p>
+              <p class="card-title">Total Energy</p>
               <p class="card-value" id="weekly-sum<%=index%>"></p>
             </div>
             <div class="total-card">
-              <p class="card-title">high</p>
+              <p class="card-title">Highest Energy</p>
               <p class="card-value" id="weekly-high<%=index%>"></p>
             </div>
             <div class="total-card">
-              <p class="card-title">low</p>
+              <p class="card-title">Lowest Energy</p>
               <p class="card-value" id="weekly-low<%=index%>"></p>
             </div>
             <div class="total-card">
-              <p class="card-title">price</p>
+              <p class="card-title">Total Price</p>
               <p class="card-value" id="weekly-price<%=index%>"></p>
             </div>
           </div>
@@ -130,21 +180,21 @@
         <div class="device-charts-card d-flex justify-content-between align-items-center">
          <div data-id="<%=index%>" class="monthly-amcharts" id="monthly_<%=index%>_div" style="width: 400px; height: 400px;"></div>
           <div data-id="<%=index%>"  class="monthly-amcharts-price" id="monthly_price_<%=index%>_div" style="width: 400px; height: 400px;"></div>
-          <div class="chart-sum-card">
+          <div class="chart-sum-card d-flex flex-column justify-content-between">
             <div class="total-card">
-              <p class="card-title">sum</p>
+              <p class="card-title">Total Energy</p>
               <p class="card-value" id="monthly-sum<%=index%>"></p>
             </div>
             <div class="total-card">
-              <p class="card-title">high</p>
+              <p class="card-title">Highest Energy</p>
               <p class="card-value" id="monthly-high<%=index%>"></p>
             </div>
             <div class="total-card">
-              <p class="card-title">low</p>
+              <p class="card-title">Lowest Energy</p>
               <p class="card-value" id="monthly-low<%=index%>"></p>
             </div>
             <div class="total-card">
-              <p class="card-title">price</p>
+              <p class="card-title">Total Price</p>
               <p class="card-value" id="monthly-price<%=index%>"></p>
             </div>
           </div>

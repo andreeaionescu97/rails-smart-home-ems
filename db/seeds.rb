@@ -43,19 +43,56 @@ category1.photo.attach(io: file1, filename: 'assistant.svg', content_type: 'imag
 category1.save
 
 category2 = Category.create(name: "Smart Thermostat")
-category3 = Category.create(name: "Smart Fridge")
+file2 = URI.open('https://res.cloudinary.com/globaldigitalassetsyergiescorpltd/image/upload/v1606961536/thermostat_dnt5ti.svg')
+category2.photo.attach(io: file2, filename: 'thermostat.svg', content_type: 'image/svg')
+category2.save
+
+category3 = Category.create(name: "Smart TV")
+file3 = URI.open('https://res.cloudinary.com/globaldigitalassetsyergiescorpltd/image/upload/v1606961536/tv_wrr4q6.svg')
+category3.photo.attach(io: file3, filename: 'tv.svg', content_type: 'image/svg')
+category3.save
+
 category4 = Category.create(name: "Smart Lock")
+file4 = URI.open('https://res.cloudinary.com/globaldigitalassetsyergiescorpltd/image/upload/v1606962287/lock_ll9xhx.svg')
+category4.photo.attach(io: file4, filename: 'lock.svg', content_type: 'image/svg')
+category4.save
+
 category5 = Category.create(name: "Smart Washing Macine")
+
 category6 = Category.create(name: "Smart Vacuum Cleaner")
-category7 = Category.create(name: "Smart Output")
-category8 = Category.create(name: "Smart TV")
+
+category7 = Category.create(name: "Smart Outlet")
+file7 = URI.open('https://res.cloudinary.com/globaldigitalassetsyergiescorpltd/image/upload/v1606962287/outlet_v3wgv3.svg')
+category7.photo.attach(io: file7, filename: 'outlet.svg', content_type: 'image/svg')
+category7.save
+
+category8 = Category.create(name: "Smart Fridge")
+
 category9 = Category.create(name: "Smart Hub")
+
 category10 = Category.create(name: "Smart Lights")
+file10 = URI.open('https://res.cloudinary.com/globaldigitalassetsyergiescorpltd/image/upload/v1606962289/lights_bp7jal.svg')
+category10.photo.attach(io: file10, filename: 'lightst.svg', content_type: 'image/svg')
+category10.save
+
 category11 = Category.create(name: "Smart Curtains")
+
 category12 = Category.create(name: "Smart Mirror")
+
 category13 = Category.create(name: "Smart Vase")
+file13 = URI.open('https://res.cloudinary.com/globaldigitalassetsyergiescorpltd/image/upload/v1606962287/vase_fdxjso.svg')
+category13.photo.attach(io: file13, filename: 'vase.svg', content_type: 'image/svg')
+category13.save
+
 category14 = Category.create(name: "Smart Clock")
+file14 = URI.open('https://res.cloudinary.com/globaldigitalassetsyergiescorpltd/image/upload/v1606962287/alarm_upoi8w.svg')
+category14.photo.attach(io: file14, filename: 'alarm.svg', content_type: 'image/svg')
+category14.save
+
 category15 = Category.create(name: "Smart Security Camera")
+file15 = URI.open('https://res.cloudinary.com/globaldigitalassetsyergiescorpltd/image/upload/v1606962287/security_df8xuw.svg')
+category15.photo.attach(io: file15, filename: 'security.svg', content_type: 'image/svg')
+category15.save
 
 
 
