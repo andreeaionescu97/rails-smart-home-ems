@@ -97,6 +97,10 @@ chart.dateFormatter.inputDateFormat = "HH:MM";
 let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
 let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 
+valueAxis.title.text = "Price (£)";
+dateAxis.title.text = "Time (Hours)";
+
+
 // Create series
 let series = chart.series.push(new am4charts.LineSeries());
 series.dataFields.valueY = "value";
