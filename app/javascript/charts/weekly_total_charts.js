@@ -43,19 +43,19 @@ categoryAxis.title.fontSize = 20;
 // categoryAxis.title.fontWeight = 600;
 
 
-let image = new am4core.Image();
-image.horizontalCenter = "middle";
-image.width = 20;
-image.height = 20;
-image.verticalCenter = "middle";
-image.adapter.add("href", (href, target)=>{
-  let category = target.dataItem.category;
-  if(category){
-    return "https://www.amcharts.com/wp-content/uploads/flags/" + category.split(" ").join("-").toLowerCase() + ".svg";
-  }
-  return href;
-})
-categoryAxis.dataItems.template.bullet = image;
+// let image = new am4core.Image();
+// image.horizontalCenter = "middle";
+// image.width = 20;
+// image.height = 20;
+// image.verticalCenter = "middle";
+// image.adapter.add("href", (href, target)=>{
+//   let category = target.dataItem.category;
+//   if(category){
+//     return "https://www.amcharts.com/wp-content/uploads/flags/" + category.split(" ").join("-").toLowerCase() + ".svg";
+//   }
+//   return href;
+// })
+// categoryAxis.dataItems.template.bullet = image;
 let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 valueAxis.min = 0;
 valueAxis.renderer.minGridDistance = 30;
