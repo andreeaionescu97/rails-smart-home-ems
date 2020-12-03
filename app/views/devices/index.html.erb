@@ -108,7 +108,7 @@
 
   <% @devices.each_with_index do |device,index| %>
     <p class="device-name" id="name<%=index%>"><%= device.name %></p>
-    <p class="device-category"><%= device.category %></p>
+    <p class="device-category"><%= device.category.name %></p>
     <hr>
 
     <ul class="nav nav-tabs" id="myTab" role="tablist">
