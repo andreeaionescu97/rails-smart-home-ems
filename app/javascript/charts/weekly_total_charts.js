@@ -79,7 +79,7 @@ series.columns.template.adapter.add("fill", function(fill, target) {
 // summing
 let sumDataWeekTotal = 0
 chart.data.forEach(element => {
-  
+
   sumDataWeekTotal += element.visits
 });
 
@@ -106,7 +106,7 @@ var lowestValueTotalWeek = Math.min(...lowestArrayTotalWeek);
 document.getElementById("total-week-low").innerText = lowestValueTotalWeek
 
 // price
-var weekPriceTotal = sumDataWeekTotal * 20;
+var weekPriceTotal = sumDataWeekTotal * 0.02;
 
 
 document.getElementById("total-week-price").innerText = weekPriceTotal

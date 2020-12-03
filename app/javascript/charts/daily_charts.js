@@ -141,9 +141,9 @@ series.columns.template.adapter.add("fill", function(fill, target) {
 // summing
 let sumDataday = 0
 chart.data.forEach(element => {
-  
+
   sumDataday += element.Watts
-  
+
 });
 const chartDailySum = document.getElementById(chartId);
 const chartDayIndex = chartDailySum.dataset.id;
@@ -153,7 +153,7 @@ document.getElementById(`daily-sum${chartDayIndex}`).innerText = sumDataday
 // highest value
 var highestArrayDay = []
 chart.data.forEach(element => {
-  
+
   highestArrayDay.push(element.Watts)
 });
 var highestValueDay = Math.max(...highestArrayDay);
@@ -167,7 +167,7 @@ document.getElementById(`daily-high${dayHighIndex}`).innerText = highestValueDay
 // lowest value
 var lowestArrayDay  = []
 chart.data.forEach(element => {
-  
+
   lowestArrayDay.push(element.Watts)
 });
 var lowestValueDay = Math.min(...lowestArrayDay);
@@ -178,9 +178,9 @@ const dayLowIndex = dayLowId.dataset.id;
 
 document.getElementById(`daily-low${dayLowIndex}`).innerText = lowestValueDay
 
-// price 
+// price
 
-var dailyPrice = sumDataday * 20;
+var dailyPrice = sumDataday * 0.02;
 
 const dailyPriceCost = document.getElementById(chartId);
 const dailyPriceIndex = dailyPriceCost.dataset.id;

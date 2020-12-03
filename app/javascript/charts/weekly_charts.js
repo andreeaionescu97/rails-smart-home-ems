@@ -109,7 +109,7 @@ const weekLowIndex = weekLowId.dataset.id;
 // console.log(charHighIndex)
 document.getElementById(`weekly-low${weekLowIndex}`).innerText = lowestValueWeek
 // price
-var weeklyPrice = sumDataWeek * 20;
+var weeklyPrice = sumDataWeek * 0.02;
 const weeklyPriceCost = document.getElementById(chartId);
 const weekPriceIndex = weeklyPriceCost.dataset.id;
 document.getElementById(`weekly-price${weekPriceIndex}`).innerText = weeklyPrice

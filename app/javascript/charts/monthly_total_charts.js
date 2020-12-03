@@ -79,7 +79,7 @@ series.columns.template.adapter.add("fill", function(fill, target) {
 // summing
 let sumDataMonthTotal = 0
 chart.data.forEach(element => {
-  
+
   sumDataMonthTotal += element.visits
 });
 
@@ -107,7 +107,7 @@ document.getElementById("total-month-low").innerText = lowestValueTotalMonth
 
 
 // price
-var monthPriceTotal = sumDataMonthTotal * 20;
+var monthPriceTotal = sumDataMonthTotal * 0.02;
 
 
 document.getElementById("total-month-price").innerText = monthPriceTotal
