@@ -46,7 +46,13 @@ categoryAxis.renderer.minGridDistance = 40;
 categoryAxis.fontSize = 11;
 categoryAxis.renderer.labels.template.dy = 5;
 
-
+categoryAxis.title.text = "Devices";
+categoryAxis.title.rotation = 0;
+categoryAxis.title.align = "center";
+// categoryAxis.title.valign = "top";
+categoryAxis.title.dy = 12;
+categoryAxis.title.fontSize = 20;
+// categoryAxis.title.fontWeight = 600;
 
 let image = new am4core.Image();
 image.horizontalCenter = "middle";
@@ -73,6 +79,7 @@ valueAxis.min = 0;
 valueAxis.renderer.minGridDistance = 30;
 valueAxis.renderer.baseGrid.disabled = true;
 
+valueAxis.title.text = "Price (£)";
 
 let series = chart.series.push(new am4charts.ColumnSeries());
 series.dataFields.categoryX = "country";
