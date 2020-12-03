@@ -99,8 +99,20 @@ categoryAxis.renderer.labels.template.rotation = 270;
 categoryAxis.tooltip.disabled = true;
 categoryAxis.renderer.minHeight = 110;
 
+
+categoryAxis.title.text = "Time (Hours)";
+categoryAxis.title.rotation = 0;
+categoryAxis.title.align = "center";
+// categoryAxis.title.valign = "bottom";
+categoryAxis.title.dy = 12;
+categoryAxis.title.fontSize = 20;
+// categoryAxis.title.fontWeight = 600;
+
 let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 valueAxis.renderer.minWidth = 50;
+
+valueAxis.title.text = "Kilowatts / kW h";
+
 
 // Create series
 let series = chart.series.push(new am4charts.ColumnSeries());
