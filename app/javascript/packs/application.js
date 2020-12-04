@@ -42,6 +42,9 @@ import { monthlyTotalPriceChart2 } from '../charts/monthly_total_price_charts';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
 
+
+
+
 const menuButton = document.getElementById("openSidebarMenu");
 const toggleContainer = document.querySelector(".page-padding-dashboard");
 if(menuButton){
