@@ -106,7 +106,7 @@ var lowestValueTotalWeek = Math.min(...lowestArrayTotalWeek);
 document.getElementById("total-week-low").innerText = lowestValueTotalWeek
 
 // price
-var weekPriceTotal = (sumDataWeekTotal * 0.02).toFixed(2);
+var weekPriceTotal = (sumDataWeekTotal * 0.01).toFixed(2);
 
 
 document.getElementById("total-week-price").innerText = weekPriceTotal

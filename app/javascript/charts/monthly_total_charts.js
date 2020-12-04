@@ -107,7 +107,7 @@ document.getElementById("total-month-low").innerText = lowestValueTotalMonth
 
 
 // price
-var monthPriceTotal = (sumDataMonthTotal * 0.02).toFixed(2);
+var monthPriceTotal = (sumDataMonthTotal * 0.01).toFixed(2);
 
 
 document.getElementById("total-month-price").innerText = monthPriceTotal
