@@ -6,6 +6,14 @@
 //
 }
 
+.page-padding-dashboard-index {
+padding-left: 100px;
+  padding-top: 50px;
+  padding-right: 0px !important;
+  transition: margin-left 250ms ease-in-out;
+  margin-left: -250px;
+}
+
 .home-name-card {
   font-size: 20px !important;
 }
@@ -34,7 +42,7 @@
 }
 
 .map-homes {
-  width: 1200px;
+  width: 100%;
 }
 
 .home-buttons {
