@@ -18,25 +18,25 @@ let chart = am4core.create(chartId, am4charts.XYChart);
 // Add data
 chart.data = [{
   "date": "30-11-2020",
-  "value": Math.floor((Math.random() * (10 * priceWattsWeekly) + 8))
+  "value": Math.floor((Math.random() * 100) + 1)
 }, {
   "date": "01-12-2020",
-  "value": Math.floor((Math.random() * (9 * priceWattsWeekly) + 7))
+  "value": Math.floor((Math.random() * 100) + 1)
 }, {
   "date": "02-12-2020",
-  "value": Math.floor((Math.random() * (9 * priceWattsWeekly) + 7))
+  "value": Math.floor((Math.random() * 100) + 1)
 }, {
   "date": "03-12-2020",
-  "value": Math.floor((Math.random() * (9 * priceWattsWeekly) + 7))
+  "value": Math.floor((Math.random() * 100) + 1)
 }, {
   "date": "04-12-2020",
-  "value": Math.floor((Math.random() * (8 * priceWattsWeekly) + 6))
+  "value": Math.floor((Math.random() * 100) + 1)
 }, {
   "date": "05-12-2020",
-  "value": Math.floor((Math.random() * (8 * priceWattsWeekly) + 6))
+  "value": Math.floor((Math.random() * 100) + 1)
 }, {
   "date": "06-12-2020",
-  "value": Math.floor((Math.random() * (8 * priceWattsWeekly) + 6))
+  "value": Math.floor((Math.random() * 100) + 1)
 }];
 
 // Set input format for the dates
