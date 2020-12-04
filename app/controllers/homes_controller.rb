@@ -5,7 +5,8 @@ class HomesController < ApplicationController
         @markers = @homes.geocoded.map do |home|
             {
               lat: home.latitude,
-              lng: home.longitude
+              lng: home.longitude,
+              infoWindow: render_to_string(partial: "info_window", locals: { home: home })
             }
         end
 
