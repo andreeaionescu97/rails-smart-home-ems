@@ -18,76 +18,76 @@ let chart = am4core.create(chartId, am4charts.XYChart);
 // Add data
 chart.data = [{
   "date": "00:00",
-  "value": Math.floor((Math.random() * (10 * priceWatts) + 8))
+  "value": Math.floor((Math.random() * (10) + 1))
 }, {
   "date": "01:00",
-  "value": Math.floor((Math.random() * (9 * priceWatts) + 7))
+  "value": Math.floor((Math.random() * (10) + 1))
 }, {
   "date": "02:00",
-  "value": Math.floor((Math.random() * (9 * priceWatts) + 7))
+  "value": Math.floor((Math.random() * (10) + 1))
 }, {
   "date": "03:00",
-  "value": Math.floor((Math.random() * (9 * priceWatts) + 7))
+  "value": Math.floor((Math.random() * (10) + 1))
 }, {
   "date": "04:00",
-  "value": Math.floor((Math.random() * (8 * priceWatts) + 6))
+  "value": Math.floor((Math.random() * (10) + 1))
 }, {
   "date": "05:00",
-  "value": Math.floor((Math.random() * (8 * priceWatts) + 6))
+  "value": Math.floor((Math.random() * (10) + 1))
 }, {
   "date": "06:00",
-  "value": 22
+  "value": Math.floor((Math.random() * (10) + 1))
 }, {
   "date": "07:00",
-  "value": 23
+  "value": Math.floor((Math.random() * (10) + 1))
 }, {
   "date": "08:00",
-  "value": 20
+  "value": Math.floor((Math.random() * (10) + 1))
 }, {
   "date": "09:00",
-  "value": 17
+  "value": Math.floor((Math.random() * (10) + 1))
 }, {
   "date": "10:00",
-  "value": 16
+  "value": Math.floor((Math.random() * (10) + 1))
 }, {
   "date": "11:00",
-  "value": 18
+  "value": Math.floor((Math.random() * (10) + 1))
 }, {
   "date": "12:00",
-  "value": 21
+  "value": Math.floor((Math.random() * (10) + 1))
 }, {
   "date": "13:00",
-  "value": 26
+  "value": Math.floor((Math.random() * (10) + 1))
 }, {
   "date": "14:00",
-  "value": 24
+  "value": Math.floor((Math.random() * (10) + 1))
 }, {
   "date": "15:00",
-  "value": 29
+  "value": Math.floor((Math.random() * (10) + 1))
 }, {
   "date": "16:00",
-  "value": 32
+  "value": Math.floor((Math.random() * (10) + 1))
 }, {
   "date": "17:00",
-  "value": 18
+  "value": Math.floor((Math.random() * (10) + 1))
 }, {
   "date": "18:00",
-  "value": 24
+  "value": Math.floor((Math.random() * (10) + 1))
 }, {
   "date": "19:00",
-  "value": 22
+  "value": Math.floor((Math.random() * (10) + 1))
 }, {
   "date": "20:00",
-  "value": 18
+  "value": Math.floor((Math.random() * (10) + 1))
 }, {
   "date": "21:00",
-  "value": 19
+  "value": Math.floor((Math.random() * (10) + 1))
 }, {
   "date": "22:00",
-  "value": 14
+  "value": Math.floor((Math.random() * (10) + 1))
 }, {
   "date": "23:00",
-  "value": 15
+  "value": Math.floor((Math.random() * (10) + 1))
 }];
 
 // Set input format for the dates
