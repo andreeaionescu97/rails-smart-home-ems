@@ -122,7 +122,7 @@ var lowestValueTotalDay = Math.min(...lowestArrayTotalDay);
 // console.log(charHighIndex)
 document.getElementById("total-day-low").innerText = lowestValueTotalDay
 // price
-var dayPriceTotal = sumDatadayTotal * 0.02;
+var dayPriceTotal = (sumDatadayTotal * 0.02).toFixed(2);
 
 
 document.getElementById("total-day-price").innerText = dayPriceTotal
