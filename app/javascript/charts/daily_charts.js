@@ -180,7 +180,7 @@ document.getElementById(`daily-low${dayLowIndex}`).innerText = lowestValueDay
 
 // price
 
-var dailyPrice = sumDataday * 0.02;
+var dailyPrice = (sumDataday * 0.02).toFixed(2);
 
 const dailyPriceCost = document.getElementById(chartId);
 const dailyPriceIndex = dailyPriceCost.dataset.id;

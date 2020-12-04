@@ -101,7 +101,7 @@ const monthLowIndex = monthLowId.dataset.id;
 // console.log(charHighIndex)
 document.getElementById(`monthly-low${monthLowIndex}`).innerText = lowestValueMonth
 // price
-var monthlyPrice = sumDataMonth * 0.02;
+var monthlyPrice = (sumDataMonth * 0.02).toFixed(2);
 const monthlyPriceCost = document.getElementById(chartId);
 const weekPriceIndex = monthlyPriceCost.dataset.id;
 document.getElementById(`monthly-price${weekPriceIndex}`).innerText = monthlyPrice

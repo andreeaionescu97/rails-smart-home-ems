@@ -46,6 +46,7 @@
     <%= render 'shared/flashes' %>
     <div class="<%= params[:controller] == 'pages' ? '' : 'd-flex' %>">
       <%= render 'shared/sidebar' %>
+
       <%= yield %>
     </div>
     <%#= render 'shared/footer' %>
