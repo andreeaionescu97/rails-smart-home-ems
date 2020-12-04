@@ -1,7 +1,12 @@
 
 #map {
-
   
+}
+
+.mapboxgl-marker:hover {
+  cursor: pointer;
+  padding-bottom: 20px;
+  transition: 0.3s;
 }
 
 .mapboxgl-popup {
